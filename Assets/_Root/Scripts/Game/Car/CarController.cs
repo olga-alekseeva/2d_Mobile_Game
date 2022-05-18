@@ -8,7 +8,7 @@ namespace Game.Car
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Car");
         private readonly CarView _view;
 
-        public GameObject ViewGameObject => _view.gameObject;
+        public GameObject ViewGameObject => _view.car;
 
         public CarController()
         {

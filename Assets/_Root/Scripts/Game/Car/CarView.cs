@@ -6,6 +6,6 @@ namespace Game.Car
 {
     public class CarView
     {
-
+    [SerializeField]public GameObject car;
     }
 }

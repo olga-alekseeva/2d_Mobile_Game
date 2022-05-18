@@ -30,10 +30,15 @@ namespace UnityStandardAssets.CrossPlatformInput
 			CreateVirtualAxes();
 		}
 
-        void Start()
-        {
-            m_StartPos = transform.position;
-        }
+		void Start()
+		{
+			m_StartPos = transform.position;
+		}
+
+		public void SetStartPosition(Vector3 position)
+		{
+			m_StartPos = position;
+		}
 
 		void UpdateVirtualAxes(Vector3 value)
 		{
@@ -78,7 +83,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			if (m_UseX)
 			{
 				int delta = (int)(data.position.x - m_StartPos.x);
-				delta = Mathf.Clamp(delta, - MovementRange, MovementRange);
+				delta = Mathf.Clamp(delta, -MovementRange, MovementRange);
 				newPos.x = delta;
 			}
 
