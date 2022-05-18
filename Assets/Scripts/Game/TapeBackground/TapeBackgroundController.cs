@@ -41,7 +41,7 @@ namespace Game.TapeBackground
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab);
-            AddGameObject(objectView);
+            AddGameObjects(objectView);
 
             return objectView.GetComponent<TapeBackgroundView>();
         }
