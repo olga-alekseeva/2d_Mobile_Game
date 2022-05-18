@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Game.Car
 {
-    public class CarView
+     internal class CarView : MonoBehaviour
     {
-    [SerializeField]public GameObject car;
+        [SerializeField] public GameObject car;
     }
 }
