@@ -10,6 +10,7 @@ namespace UI
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/MainMenu");
         private readonly ProfilePlayer _profilePlayer;
         private readonly MainMenuView _view;
+        private readonly SettingsMenuView _settingsView;
 
 
         public MainMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -28,7 +29,11 @@ namespace UI
             return objectView.GetComponent<MainMenuView>();
         }
 
-        private void StartGame() =>
-            _profilePlayer.CurrentState.Value = GameState.Game;
+        private void StartGame()
+        {
+             _profilePlayer.CurrentState.Value = GameState.Game;
+            _profilePlayer.CurrentState.Value = GameState.Settings;
+        }
+        
     }
 }
