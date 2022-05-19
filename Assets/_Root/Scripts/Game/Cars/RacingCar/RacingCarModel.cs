@@ -6,8 +6,8 @@ namespace Game.Cars.RacingCar
 {
 
 
-    public class RacingCarModel
+    public class RacingCarModel: CarModel
     {
-
+        public RacingCarModel(float speed) : base(speed) { }
     }
 }
