@@ -1,4 +1,4 @@
-namespace Game.Car
+namespace Game.Cars
 {
 public class CarModel 
     {

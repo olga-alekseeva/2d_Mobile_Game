@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Car
+namespace Game.Cars
 {
      internal class CarView : MonoBehaviour
     {

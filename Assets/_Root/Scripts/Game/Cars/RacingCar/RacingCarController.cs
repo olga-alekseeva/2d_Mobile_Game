@@ -1,16 +1,16 @@
 using Tools;
 using UnityEngine;
 
-namespace Game.Car
+namespace Game.Cars.RacingCar
 {
-    internal class CarController : BaseController
+    internal class RacingCarController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Car");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Racing Car");
         private readonly CarView _view;
 
         public GameObject ViewGameObject => _view.car;
 
-        public CarController()
+        public RacingCarController()
         {
             _view = LoadView();
         }
