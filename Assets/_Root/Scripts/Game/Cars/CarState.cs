@@ -1,10 +1,9 @@
 ﻿
 
-namespace Game.Cars
-{
-    internal enum CarState
+
+    public enum CarState
     {
         LowRiderClose,
         RacingCar
     }
-}
+

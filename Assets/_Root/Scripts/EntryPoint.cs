@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Profile;
-using Game.Cars;
+using UnityEngine;
 
 internal class EntryPoint : MonoBehaviour
 {
@@ -14,7 +11,7 @@ internal class EntryPoint : MonoBehaviour
 
     private void Awake()
     {
-        var profilePlayer = new ProfilePlayer(SpeedCar, InitialState, _carState);
+        var profilePlayer = new ProfilePlayer(SpeedCar, InitialState, CarState.RacingCar);
         _mainController = new MainController(_placeForUI, profilePlayer);
     }
 
