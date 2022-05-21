@@ -1,16 +1,13 @@
 using Tools;
 using Game.Cars.RacingCar;
+using Game.Cars.LowRiderClose;
 using Game.Cars;
-
-
-
-
 namespace Profile
 {
     internal class ProfilePlayer
     {
         public readonly SubscriptionProperty<GameState> CurrentState;
-        public readonly CarModel CurrentCar;
+        public CarModel currentCar;
         public readonly CarState carState;
 
 
@@ -18,21 +15,32 @@ namespace Profile
         {
             CurrentState.Value = initialState;
             this.carState = carState;
+            ChooseCar(speedCar);
+        }
+        private void ChooseCar(float speedCar)
+        {
+            switch (carState)
+            {
+                case CarState.LowRiderClose:
+                    currentCar = new LowRiderCloseModel(speedCar);
+                    break;
+                case CarState.RacingCar:
+                    currentCar = new RacingCarModel(speedCar);
+                    break;
+                default:
+                    currentCar = null;
+                    break;
+
+            }
         }
 
         public ProfilePlayer(float speedCar)
         {
             CurrentState = new SubscriptionProperty<GameState>();
-           //CurrentCar = new CarModel(speedCar);
-        }
-        //private void ChooseCar(fload speedCar)
-        //{
-        //    switch (carState)
-        //    {
-        //        case CarState.LowRiderClose:
-        //            CurrentCar  = new LowRiderModel
 
-        //    }
-        //}
+        }
+
+        
+ 
     }
 }

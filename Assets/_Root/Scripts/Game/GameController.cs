@@ -16,7 +16,7 @@ namespace Game
             var tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             AddController(tapeBackgroundController);
 
-            var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
+            var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.currentCar);
             AddController(inputGameController);
 
             var carController = new RacingCarController();
