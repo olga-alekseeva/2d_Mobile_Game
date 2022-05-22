@@ -2,6 +2,8 @@ using Tools;
 using Game.Cars.RacingCar;
 using Game.Cars.LowRiderClose;
 using Game.Cars;
+using UnityEngine;
+
 namespace Profile
 {
     internal class ProfilePlayer
@@ -15,23 +17,28 @@ namespace Profile
         {
             CurrentState.Value = initialState;
             this.carState = carState;
+           
             ChooseCar(speedCar);
+
+            
         }
         private void ChooseCar(float speedCar)
         {
-            switch (carState)
-            {
-                case CarState.LowRiderClose:
-                    currentCar = new LowRiderCloseModel(speedCar);
-                    break;
-                case CarState.RacingCar:
-                    currentCar = new RacingCarModel(speedCar);
-                    break;
-                default:
-                    currentCar = null;
-                    break;
+            
+                switch (carState)
+                {
+                    case CarState.LowRiderClose:
+                        currentCar = new LowRiderCloseModel(speedCar);
+                        break;
+                    case CarState.RacingCar:
+                        currentCar = new RacingCarModel(speedCar);
+                        break;
+                    default:
+                        currentCar = null;
+                        break;
 
-            }
+                }
+          
         }
 
         public ProfilePlayer(float speedCar)

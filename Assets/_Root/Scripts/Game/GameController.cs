@@ -20,6 +20,7 @@ namespace Game
             var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.currentCar);
             AddController(inputGameController);
 
+            
             var racingCarController = new RacingCarController();
             AddController(racingCarController);
 
