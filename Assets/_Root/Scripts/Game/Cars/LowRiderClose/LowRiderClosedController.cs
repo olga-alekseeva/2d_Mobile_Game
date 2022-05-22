@@ -8,7 +8,7 @@ namespace Game.Cars.LowRiderClose
 
     internal class LowRiderClosedController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/LowRiderClose");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Cars/LowRiderClose");
         private readonly CarView _view;
 
 

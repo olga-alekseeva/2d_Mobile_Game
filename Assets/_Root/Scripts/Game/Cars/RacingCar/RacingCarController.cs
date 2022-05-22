@@ -5,7 +5,7 @@ namespace Game.Cars.RacingCar
 {
     internal class RacingCarController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Racing Car");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Cars/Racing Car");
         private readonly CarView _view;
 
         public GameObject ViewGameObject => _view.car;
