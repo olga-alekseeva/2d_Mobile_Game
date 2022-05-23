@@ -1,6 +1,7 @@
 using Profile;
 using Services.Ads.UnityAds;
 using Services.Analytics;
+using Services.IAP;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
@@ -16,7 +17,7 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] private Transform _placeForUI;
     [SerializeField] private AnalyticsManager _analytics;
     [SerializeField] private UnityAdsService _adsService;
-  //  [SerializeField] private IAPService _iapService;
+    [SerializeField] private IAPService _iapService;
 
 
     private void Awake()
@@ -27,8 +28,8 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
         if (_adsService.IsInitialized) OnAdsInitialized();
         else _adsService.Initialized.AddListener(OnAdsInitialized);
 
-        //if (_iapService.IsInitialized) OnIapInitialized();
-        //else _iapService.Initialized.AddListener(OnIapInitialized);
+        if (_iapService.IsInitialized) OnIapInitialized();
+        else _iapService.Initialized.AddListener(OnIapInitialized);
 
         _analytics.SendGameStarted();
 
@@ -49,7 +50,14 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
 
     private void OnDestroy()
     {
+        _adsService.Initialized.RemoveListener(OnAdsInitialized);
+        _iapService.Initialized.RemoveListener(OnIapInitialized);
         _mainController.Dispose();
     }
+
+
+    private void OnAdsInitialized() => _adsService.InterstitialPlayer.Play();
+    private void OnIapInitialized() => _iapService.Buy("product_1");
 }
+
 

@@ -4,7 +4,7 @@ using UnityEngine.Advertisements;
 
 namespace Services.Ads.UnityAds
 {
-    internal abstract class UnityAdsPlayer : IAdsPlayer, IUnity
+    internal abstract class UnityAdsPlayer : IAdsPlayer, IUnityAdsListener
     {
         public event Action Started;
         public event Action Finished;
