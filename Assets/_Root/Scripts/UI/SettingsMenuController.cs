@@ -15,11 +15,11 @@ namespace UI
         {
             _profilePlayer = profilePlayer;
             _settingsMenuView = LoadView(placeForUI);
-            _settingsMenuView.Init(ShowSettings);
+            _settingsMenuView.Init(ShowStart);
 
         }
-            private SettingsMenuView LoadView(Transform placeForUI)
-            {
+        private SettingsMenuView LoadView(Transform placeForUI)
+        {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
             GameObject objectView = Object.Instantiate(prefab, placeForUI, false);
             AddGameObjects(objectView);
@@ -27,8 +27,8 @@ namespace UI
             return objectView.GetComponent<SettingsMenuView>();
 
         }
-        private void ShowSettings() => _profilePlayer.CurrentState.Value = GameState.Start;
+        private void ShowStart() => _profilePlayer.CurrentState.Value = GameState.Start;
 
     }
-    }
+}
 

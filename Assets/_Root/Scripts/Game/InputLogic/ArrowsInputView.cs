@@ -34,5 +34,5 @@ namespace Game.InputLogic
             return direction;
         }
     }
-    }
+}
 

@@ -17,7 +17,7 @@ namespace UI
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame);
+            _view.Init(StartGame,ShowAds);
         }
 
         private MainMenuView LoadView(Transform placeForUi)
@@ -33,6 +33,11 @@ namespace UI
         {
              _profilePlayer.CurrentState.Value = GameState.Game;
             _profilePlayer.CurrentState.Value = GameState.Settings;
+        }
+
+        private void ShowAds()
+        {
+            
         }
         
     }

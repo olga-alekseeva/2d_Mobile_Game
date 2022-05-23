@@ -9,7 +9,7 @@ namespace Game.InputLogic
 {
     internal class InputGameController:BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Input/MobileSingleStickControl");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Input/ArrowInput");
         private BaseInputView _view;
 
 

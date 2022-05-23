@@ -734,15 +734,15 @@ IL2CPP_EXTERN_C RuntimeClass* WaitForSecondsU5BU5D_t2A9038ECB6E643745AEF2AD9A4F7
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WordSelectionEvent_t340E6006406B5E90F7190C56218E8F7E3712945E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral000A577FA6F1044FCB37680E918D59D0DA3E7DDA;
+IL2CPP_EXTERN_C String_t* _stringLiteral001A8E8EFD36756724DAFFA7709111E527ED9544;
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral0133981053AC767ED98F641B459173B5499F4EB0;
 IL2CPP_EXTERN_C String_t* _stringLiteral042E81C2165064627022D513DE063F1AE9F8EF49;
 IL2CPP_EXTERN_C String_t* _stringLiteral0570B799853B77BFC04E0AB8BD83CD1E5089060A;
-IL2CPP_EXTERN_C String_t* _stringLiteral07DEA4DD63915A1E627D25A5A337267B134031DE;
-IL2CPP_EXTERN_C String_t* _stringLiteral09F46A36A4EFA55C3298290F96B7287A112BCB8C;
 IL2CPP_EXTERN_C String_t* _stringLiteral0A5B75A180F8485D63D34FF1F4EDF6699CD0E2E0;
 IL2CPP_EXTERN_C String_t* _stringLiteral0E5ACD8F8AECEE8F67E336B26C4EAF8C98F34BD0;
 IL2CPP_EXTERN_C String_t* _stringLiteral0EF911B4E5C5A3E63DAB6CEA449EF637C363EF9B;
+IL2CPP_EXTERN_C String_t* _stringLiteral10CDE417E3089A25DEC0D8A1770E56702167C640;
 IL2CPP_EXTERN_C String_t* _stringLiteral15196F05B117690F3E12E56AA0C43803EA0D2A46;
 IL2CPP_EXTERN_C String_t* _stringLiteral16DD21BE77B115D392226EB71A2D3A9FDC29E3F0;
 IL2CPP_EXTERN_C String_t* _stringLiteral1BF20F795791AC67CCC9E2B5B855E3A9D68CDDD6;
@@ -753,21 +753,22 @@ IL2CPP_EXTERN_C String_t* _stringLiteral3783D62DA544C4A10F6775DC60E5A763AA9BED1B
 IL2CPP_EXTERN_C String_t* _stringLiteral37A63149D4AE474C156BDF562682618129D26994;
 IL2CPP_EXTERN_C String_t* _stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0;
 IL2CPP_EXTERN_C String_t* _stringLiteral3D340328C9A8D4C7396701777F9419AB7A7D1DD7;
+IL2CPP_EXTERN_C String_t* _stringLiteral41A40FA2C5CBFDF828765F40357B8BAD46C0FF10;
 IL2CPP_EXTERN_C String_t* _stringLiteral488BBD09F4A1A1F043A936DD66A4830B2FFA8FFC;
 IL2CPP_EXTERN_C String_t* _stringLiteral49F573D371AD0ACE3EA6E766EE4177DA2021309B;
-IL2CPP_EXTERN_C String_t* _stringLiteral4B345362552E2FCEE0309DD0B337399FF88731D1;
 IL2CPP_EXTERN_C String_t* _stringLiteral5225EE496AAB278285733EDA00B46385A27F58CC;
 IL2CPP_EXTERN_C String_t* _stringLiteral535608A4CC61E3D6937861E5E07019C9FD9295DF;
 IL2CPP_EXTERN_C String_t* _stringLiteral55F097B2603C69F9353B2AE824F1FE43E6B46F87;
 IL2CPP_EXTERN_C String_t* _stringLiteral598081DBD06E8B1A338629AF7933F9131C6D33AB;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A10C9EC43CBD54DDDF8E9DF545088EE148FA1C2;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A3D6FC5AC03F283E51A1E494164E2F6D006FCE2;
-IL2CPP_EXTERN_C String_t* _stringLiteral62863477F6BA994D7D3BFFBE59C1E9AF00159071;
 IL2CPP_EXTERN_C String_t* _stringLiteral631AA260CCBCD09B280701FFFE8C969E82705E89;
+IL2CPP_EXTERN_C String_t* _stringLiteral6428E46E2F2DB7644802350EC661A0D8A35C37A1;
 IL2CPP_EXTERN_C String_t* _stringLiteral69CE07E5C7ADCC833DA3E659BC9009F6C3C1346A;
 IL2CPP_EXTERN_C String_t* _stringLiteral6C3B90D0C27E620F9CB6F4530546C591AB0C5E12;
 IL2CPP_EXTERN_C String_t* _stringLiteral71B680ABF9213B3E8FB888056C235C79CFE83314;
 IL2CPP_EXTERN_C String_t* _stringLiteral71BD498E5FC7E3B8709294B88AB8FAB2CFF77CAE;
+IL2CPP_EXTERN_C String_t* _stringLiteral754C7ACD9685B7D443CAC33A71C85B7B7034AB6B;
 IL2CPP_EXTERN_C String_t* _stringLiteral75A94EE44309525CF46FB9C022ED6E9EFAC8B506;
 IL2CPP_EXTERN_C String_t* _stringLiteral7889C794B5BC9B89F6A5957FBD8F8D7CE03ED365;
 IL2CPP_EXTERN_C String_t* _stringLiteral7ED749EE8D52077A620CEEBF7788810C3D4CAFD1;
@@ -803,7 +804,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralCED30D471F9ECB011896E4C24680A6982ECBCAFE
 IL2CPP_EXTERN_C String_t* _stringLiteralD00074DE8ACBEBA7EF28BE447E997E8352E84502;
 IL2CPP_EXTERN_C String_t* _stringLiteralD0D6995F0417987C0AE1042C92DF52DB529775F8;
 IL2CPP_EXTERN_C String_t* _stringLiteralD579F97F4A33C344330AED1285CC5B545618BC19;
-IL2CPP_EXTERN_C String_t* _stringLiteralD961FEDAD3E18CBF20490EC07E5501F6DCC9F18C;
 IL2CPP_EXTERN_C String_t* _stringLiteralD99C319B457682A09D028AF022D0B2EE6B4D48A6;
 IL2CPP_EXTERN_C String_t* _stringLiteralDECFB8F380101725B06EAE2D3F983211A277171C;
 IL2CPP_EXTERN_C String_t* _stringLiteralE1D85E52F3B86DA23C52FC9D1D1D3DDDAA5C08FD;
@@ -873,7 +873,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* Resources_Load_TisGameObject_t76FEDD663AB33
 IL2CPP_EXTERN_C const RuntimeMethod* Resources_Load_TisMaterial_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3_m28782CC70624922DAF3B0FB13930E4EB59848128_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Resources_Load_TisSprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99_m8D8AE46A3EEE9C6B2D218827881E60CA3CFE7703_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Resources_Load_TisTMP_FontAsset_t923BF2F78D7C5AC36376E168A1193B7CB4855160_m4C7F47B73C641ED180784E089759867A85127C13_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SingletonBehaviour_1__ctor_mFDDE7FA99AC9A4AFC45942BE5E3D264D48E53C7E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SingletonBehaviour_1_get_Instance_m2574FE82A5362196FA8E8B3C86938E9A14FB01CD_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SubscriptionProperty_1_SubscribeOnChange_m9FCA2FC930A1A8AF11ECA8E47DA04736B34E8D6E_RuntimeMethod_var;
@@ -9765,14 +9765,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuController__ctor_m47E252CAD8F841
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MainMenuController_StartGame_m86D33DC7C38383F51F2F9CD6AFC258166B2E5423_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral09F46A36A4EFA55C3298290F96B7287A112BCB8C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral754C7ACD9685B7D443CAC33A71C85B7B7034AB6B);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/MainMenu");
+		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/UI/MainMenu");
 		ResourcePath_t22281864FDACE030C5B16540CE079E646B503F48 L_0;
 		memset((&L_0), 0, sizeof(L_0));
-		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral09F46A36A4EFA55C3298290F96B7287A112BCB8C, /*hidden argument*/NULL);
+		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral754C7ACD9685B7D443CAC33A71C85B7B7034AB6B, /*hidden argument*/NULL);
 		__this->____resourcePath_3 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____resourcePath_3))->___PathResource_0), (void*)NULL);
 		// public MainMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -9917,16 +9917,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingsMenuController__ctor_m9C21D0FC16
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4B345362552E2FCEE0309DD0B337399FF88731D1);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral41A40FA2C5CBFDF828765F40357B8BAD46C0FF10);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Settings");
+		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/UI/Settings");
 		ResourcePath_t22281864FDACE030C5B16540CE079E646B503F48 L_0;
 		memset((&L_0), 0, sizeof(L_0));
-		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral4B345362552E2FCEE0309DD0B337399FF88731D1, /*hidden argument*/NULL);
+		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral41A40FA2C5CBFDF828765F40357B8BAD46C0FF10, /*hidden argument*/NULL);
 		__this->____resourcePath_3 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____resourcePath_3))->___PathResource_0), (void*)NULL);
 		// public SettingsMenuController(Transform placeForUI, ProfilePlayer profilePlayer)
@@ -9941,11 +9941,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingsMenuController__ctor_m9C21D0FC16
 		L_3 = SettingsMenuController_LoadView_mF4AD9E5CB4D37DA4B871D5CECBC2CB4DF567221F(__this, L_2, NULL);
 		__this->____settingsMenuView_5 = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____settingsMenuView_5), (void*)L_3);
-		// _settingsMenuView.Init(ShowSettings);
+		// _settingsMenuView.Init(ShowStart);
 		SettingsMenuView_t9AF9687177FDD3725DBE7D79391DAB2F4B7006FE* L_4 = __this->____settingsMenuView_5;
 		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_5 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
 		NullCheck(L_5);
-		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_5, __this, (intptr_t)((void*)SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7_RuntimeMethod_var), NULL);
+		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_5, __this, (intptr_t)((void*)SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763_RuntimeMethod_var), NULL);
 		NullCheck(L_4);
 		SettingsMenuView_Init_m1A4EE8094D80C3378F75A45434DA35DE4ED2C2C5(L_4, L_5, NULL);
 		// }
@@ -9986,8 +9986,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SettingsMenuView_t9AF9687177FDD3725DBE7D79391
 		return L_6;
 	}
 }
-// System.Void UI.SettingsMenuController::ShowSettings()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7 (SettingsMenuController_tAF377D5D421EC5E4A020BB4D7880A853964C7011* __this, const RuntimeMethod* method) 
+// System.Void UI.SettingsMenuController::ShowStart()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763 (SettingsMenuController_tAF377D5D421EC5E4A020BB4D7880A853964C7011* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -9996,7 +9996,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingsMenuController_ShowSettings_mE7D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private void ShowSettings() => _profilePlayer.CurrentState.Value = GameState.Start;
+		// private void ShowStart() => _profilePlayer.CurrentState.Value = GameState.Start;
 		ProfilePlayer_tCB5D3C33F58E55EAE5AF515675F5B35D2F219971* L_0 = __this->____profilePlayer_4;
 		NullCheck(L_0);
 		SubscriptionProperty_1_tBE4809B24621C7D7B3AD3EFDEC8CF4899F343822* L_1 = L_0->___CurrentState_0;
@@ -11612,14 +11612,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InputGameController__ctor_m5B8606168278C
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral07DEA4DD63915A1E627D25A5A337267B134031DE);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6428E46E2F2DB7644802350EC661A0D8A35C37A1);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/ArrowInput");
+		// private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Input/ArrowInput");
 		ResourcePath_t22281864FDACE030C5B16540CE079E646B503F48 L_0;
 		memset((&L_0), 0, sizeof(L_0));
-		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral07DEA4DD63915A1E627D25A5A337267B134031DE, /*hidden argument*/NULL);
+		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral6428E46E2F2DB7644802350EC661A0D8A35C37A1, /*hidden argument*/NULL);
 		__this->____resourcePath_3 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____resourcePath_3))->___PathResource_0), (void*)NULL);
 		// public InputGameController(
@@ -11868,14 +11868,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RacingCarController__ctor_m148FB61F59352
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD961FEDAD3E18CBF20490EC07E5501F6DCC9F18C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral001A8E8EFD36756724DAFFA7709111E527ED9544);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Racing Car");
+		// private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Cars/Racing Car");
 		ResourcePath_t22281864FDACE030C5B16540CE079E646B503F48 L_0;
 		memset((&L_0), 0, sizeof(L_0));
-		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteralD961FEDAD3E18CBF20490EC07E5501F6DCC9F18C, /*hidden argument*/NULL);
+		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral001A8E8EFD36756724DAFFA7709111E527ED9544, /*hidden argument*/NULL);
 		__this->____viewPath_3 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____viewPath_3))->___PathResource_0), (void*)NULL);
 		// public RacingCarController()
@@ -11966,14 +11966,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LowRiderClosedController__ctor_m5D082D3C
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral62863477F6BA994D7D3BFFBE59C1E9AF00159071);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral10CDE417E3089A25DEC0D8A1770E56702167C640);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/LowRiderClose");
+		// private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Cars/LowRiderClose");
 		ResourcePath_t22281864FDACE030C5B16540CE079E646B503F48 L_0;
 		memset((&L_0), 0, sizeof(L_0));
-		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral62863477F6BA994D7D3BFFBE59C1E9AF00159071, /*hidden argument*/NULL);
+		ResourcePath__ctor_m3CAA58C48412B6DF1C5B3A171343EF41A12AD05F_inline((&L_0), _stringLiteral10CDE417E3089A25DEC0D8A1770E56702167C640, /*hidden argument*/NULL);
 		__this->____viewPath_3 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)&(((&__this->____viewPath_3))->___PathResource_0), (void*)NULL);
 		// public LowRiderClosedController()

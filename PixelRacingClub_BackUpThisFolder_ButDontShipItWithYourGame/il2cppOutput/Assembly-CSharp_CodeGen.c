@@ -124,8 +124,8 @@ extern void MainMenuView__ctor_mB67A7CAD7A5DC7EB5188B9A06B7BA061FB2DCF96 (void);
 extern void SettingsMenuController__ctor_m9C21D0FC163303A53D5025FEBAFA11702FD0C704 (void);
 // 0x00000038 UI.SettingsMenuView UI.SettingsMenuController::LoadView(UnityEngine.Transform)
 extern void SettingsMenuController_LoadView_mF4AD9E5CB4D37DA4B871D5CECBC2CB4DF567221F (void);
-// 0x00000039 System.Void UI.SettingsMenuController::ShowSettings()
-extern void SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7 (void);
+// 0x00000039 System.Void UI.SettingsMenuController::ShowStart()
+extern void SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763 (void);
 // 0x0000003A System.Void UI.SettingsMenuView::Init(UnityEngine.Events.UnityAction)
 extern void SettingsMenuView_Init_m1A4EE8094D80C3378F75A45434DA35DE4ED2C2C5 (void);
 // 0x0000003B System.Void UI.SettingsMenuView::OnDestroy()
@@ -898,7 +898,7 @@ static Il2CppMethodPointer s_methodPointers[421] =
 	MainMenuView__ctor_mB67A7CAD7A5DC7EB5188B9A06B7BA061FB2DCF96,
 	SettingsMenuController__ctor_m9C21D0FC163303A53D5025FEBAFA11702FD0C704,
 	SettingsMenuController_LoadView_mF4AD9E5CB4D37DA4B871D5CECBC2CB4DF567221F,
-	SettingsMenuController_ShowSettings_mE7D0327D29D201C34B82AC966E3DDA2CC54DDAC7,
+	SettingsMenuController_ShowStart_m03892131248D89EE8B4E9F05F5F973C7357AB763,
 	SettingsMenuView_Init_m1A4EE8094D80C3378F75A45434DA35DE4ED2C2C5,
 	SettingsMenuView_OnDestroy_mC26AAB63627F242EFE87A4FF1F7EC53BC7EDEC5C,
 	SettingsMenuView__ctor_m0E381C493D7E986F560CE15CEF21BBB8611CBC1F,
