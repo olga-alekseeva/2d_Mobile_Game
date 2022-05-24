@@ -16,9 +16,9 @@ namespace Services.IAP
         public bool IsInitialized { get; private set; }
 
         private IExtensionProvider _extensionProvider;
+        private IStoreController _controller;
         private PurchaseValidator _purchaseValidator;
         private PurchaseRestorer _purchaseRestorer;
-        private IStoreController _controller;
 
 
         private void Awake() =>

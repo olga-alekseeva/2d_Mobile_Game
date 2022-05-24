@@ -28,7 +28,7 @@ namespace Services.Ads.UnityAds
             Advertisement.Initialize(
                 _settings.GameId,
                 _settings.TestMode,
-               // _settings.EnablePerPlacementMode,
+                _settings.EnablePerPlacementMode,
                 this);
 
         private void InitializePlayers()
@@ -45,7 +45,9 @@ namespace Services.Ads.UnityAds
                 : (IAdsPlayer)new EmptyPlayer("");
 
         private IAdsPlayer CreateRewarded() =>
-            new EmptyPlayer("");
+            _settings.Rewarded.Enabled
+            ? new RewardedPlayer(_settings.Rewarded.Id)
+            : (IAdsPlayer) new EmptyPlayer("");
 
         private IAdsPlayer CreateBanner() =>
             new EmptyPlayer("");

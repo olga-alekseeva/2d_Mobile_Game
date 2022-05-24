@@ -17,7 +17,7 @@ namespace Services.Ads.UnityAds
 
         [field: Header("Settings")]
         [field: SerializeField] public bool TestMode { get; private set; } = true;
-       // [field: SerializeField] public bool EnablePerPlacementMode { get; private set; } = true;
+        [field: SerializeField] public bool EnablePerPlacementMode { get; private set; } = true;
 
 
         public string GameId =>

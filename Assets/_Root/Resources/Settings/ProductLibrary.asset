@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d72a813d9e48b5829288680dc95b9c, type: 3}
   m_Name: ProductLibrary
   m_EditorClassIdentifier: 
-  <Products>k__BackingField: []
+  <Products>k__BackingField:
+  - <Id>k__BackingField: product_1
+    <ProductType>k__BackingField: 0
+  - <Id>k__BackingField: product_2
+    <ProductType>k__BackingField: 0
