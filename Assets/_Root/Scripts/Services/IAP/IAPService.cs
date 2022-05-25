@@ -21,7 +21,7 @@ namespace Services.IAP
         private PurchaseRestorer _purchaseRestorer;
 
 
-        private void Awake() =>
+        public void Awake() =>
             InitializeProducts();
 
         private void InitializeProducts()

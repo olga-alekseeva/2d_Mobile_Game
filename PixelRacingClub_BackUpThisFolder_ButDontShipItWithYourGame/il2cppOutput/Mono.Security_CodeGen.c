@@ -40,17 +40,19 @@ extern void ASN1_get_Item_mF105DA24F3BE9FA3697229CF99B1602B736B647F (void);
 extern void ASN1_ToString_m4995F083B02F8FEF578ECA6EE73A257821F50A00 (void);
 // 0x0000000E Mono.Security.ASN1 Mono.Security.ASN1Convert::FromInt32(System.Int32)
 extern void ASN1Convert_FromInt32_m9095C18057D59AF7CF8A46687596506E4DD51137 (void);
-// 0x0000000F System.Int32 Mono.Security.ASN1Convert::ToInt32(Mono.Security.ASN1)
+// 0x0000000F Mono.Security.ASN1 Mono.Security.ASN1Convert::FromOid(System.String)
+extern void ASN1Convert_FromOid_m52B6C819090CC0108855EA536BE49C238A035333 (void);
+// 0x00000010 System.Int32 Mono.Security.ASN1Convert::ToInt32(Mono.Security.ASN1)
 extern void ASN1Convert_ToInt32_m9A470D9CBF2F909B72C2A463DD2BA95BA8B6E9B8 (void);
-// 0x00000010 System.String Mono.Security.ASN1Convert::ToOid(Mono.Security.ASN1)
+// 0x00000011 System.String Mono.Security.ASN1Convert::ToOid(Mono.Security.ASN1)
 extern void ASN1Convert_ToOid_mA14AFFFD01E1AC0ADA5149B502CBBEB3A5035DBC (void);
-// 0x00000011 System.Byte[] Mono.Security.BitConverterLE::GetUIntBytes(System.Byte*)
+// 0x00000012 System.Byte[] Mono.Security.BitConverterLE::GetUIntBytes(System.Byte*)
 extern void BitConverterLE_GetUIntBytes_mFADA7EFA8289488D269C88C2ED1B0787F6CCE124 (void);
-// 0x00000012 System.Byte[] Mono.Security.BitConverterLE::GetBytes(System.Int32)
+// 0x00000013 System.Byte[] Mono.Security.BitConverterLE::GetBytes(System.Int32)
 extern void BitConverterLE_GetBytes_mDA42058C891A6EAF96066B6E621888A629B9C990 (void);
-// 0x00000013 System.String Mono.Security.Cryptography.CryptoConvert::ToHex(System.Byte[])
+// 0x00000014 System.String Mono.Security.Cryptography.CryptoConvert::ToHex(System.Byte[])
 extern void CryptoConvert_ToHex_m372F8F7845B638F6C6BD17F0390A1641A51C2E21 (void);
-static Il2CppMethodPointer s_methodPointers[19] = 
+static Il2CppMethodPointer s_methodPointers[20] = 
 {
 	ASN1__ctor_mA9AE2197367C1E13DBFDA67E0A383167F52CC114,
 	ASN1__ctor_mAA538F9E1BE0DE739E9747BC3BC71DC030B018AA,
@@ -66,39 +68,41 @@ static Il2CppMethodPointer s_methodPointers[19] =
 	ASN1_get_Item_mF105DA24F3BE9FA3697229CF99B1602B736B647F,
 	ASN1_ToString_m4995F083B02F8FEF578ECA6EE73A257821F50A00,
 	ASN1Convert_FromInt32_m9095C18057D59AF7CF8A46687596506E4DD51137,
+	ASN1Convert_FromOid_m52B6C819090CC0108855EA536BE49C238A035333,
 	ASN1Convert_ToInt32_m9A470D9CBF2F909B72C2A463DD2BA95BA8B6E9B8,
 	ASN1Convert_ToOid_mA14AFFFD01E1AC0ADA5149B502CBBEB3A5035DBC,
 	BitConverterLE_GetUIntBytes_mFADA7EFA8289488D269C88C2ED1B0787F6CCE124,
 	BitConverterLE_GetBytes_mDA42058C891A6EAF96066B6E621888A629B9C990,
 	CryptoConvert_ToHex_m372F8F7845B638F6C6BD17F0390A1641A51C2E21,
 };
-static const int32_t s_InvokerIndices[19] = 
+static const int32_t s_InvokerIndices[20] = 
 {
-	3055,
-	1665,
-	3028,
-	3655,
-	3707,
-	3675,
-	3028,
-	2244,
-	3675,
-	859,
-	304,
-	2242,
-	3675,
-	6308,
-	6192,
-	6311,
-	6301,
-	6308,
-	6311,
+	3304,
+	1794,
+	3274,
+	3995,
+	4049,
+	4015,
+	3274,
+	2410,
+	4015,
+	930,
+	322,
+	2408,
+	4015,
+	6882,
+	6885,
+	6764,
+	6885,
+	6874,
+	6882,
+	6885,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Mono_Security_CodeGenModule;
 const Il2CppCodeGenModule g_Mono_Security_CodeGenModule = 
 {
 	"Mono.Security.dll",
-	19,
+	20,
 	s_methodPointers,
 	0,
 	NULL,
