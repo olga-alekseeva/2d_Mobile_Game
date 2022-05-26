@@ -13,45 +13,74 @@ internal abstract class BaseController:IDisposable
         private bool _isDisposed;
         public void Dispose()
         {
-            if (!_isDisposed)
-            {
-                _isDisposed = true;
-                if(_baseControllers!= null)
-                {
-                foreach(BaseController baseController in _baseControllers)
-                    {
-                        baseController?.Dispose();
-                    }
-                _baseControllers.Clear();
-                }
-                if(_gameObjects!= null)
-                {
-                    foreach(GameObject cachedGameObject in _gameObjects)
-                    {
-                        Object.Destroy(cachedGameObject);
-                    }
-                    _gameObjects.Clear();   
-                }
-                OnDispose();
-            }
-        }
-        protected void AddController(BaseController baseController)
-        {
-            if(_baseControllers==null)
-                _baseControllers = new List<BaseController>();
-            _baseControllers.Add(baseController);
-        }
-        protected void AddGameObjects(GameObject gameObject)
-        {
-            if(_gameObjects==null)
-                _gameObjects = new List<GameObject>();
-            _gameObjects.Add(gameObject);
-        }
-        protected virtual void OnDispose()
-        {
+            if (_isDisposed)
+                return;
 
+            _isDisposed = true;
+
+            DisposeBaseControllers();
+            DisposeRepositories();
+            DisposeGameObjects();
+
+            OnDispose();
         }
+  
+    private void DisposeBaseControllers()
+    {
+        if (_baseControllers == null)
+            return;
+
+        foreach (BaseController baseController in _baseControllers)
+            baseController.Dispose();
+
+        _baseControllers.Clear();
+    }
+
+    private void DisposeRepositories()
+    {
+        if (_repositories == null)
+            return;
+
+        foreach (IRepository repository in _repositories)
+            repository.Dispose();
+
+        _repositories.Clear();
+    }
+
+    private void DisposeGameObjects()
+    {
+        if (_gameObjects == null)
+            return;
+
+        foreach (GameObject gameObject in _gameObjects)
+            Object.Destroy(gameObject);
+
+        _gameObjects.Clear();
+    }
+
+    protected virtual void OnDispose() { }
+
+
+    protected void AddController(BaseController baseController)
+    {
+        _baseControllers ??= new List<BaseController>();
+        _baseControllers.Add(baseController);
+    }
+
+    protected void AddRepository(IRepository repository)
+    {
+        _repositories ??= new List<IRepository>();
+        _repositories.Add(repository);
+    }
+
+    protected void AddGameObject(GameObject gameObject)
+    {
+        _gameObjects ??= new List<GameObject>();
+        _gameObjects.Add(gameObject);
+    }
 }
+
+
 
 
     
