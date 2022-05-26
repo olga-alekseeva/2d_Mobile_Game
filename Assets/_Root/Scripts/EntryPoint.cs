@@ -28,8 +28,8 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
         if (_adsService.IsInitialized) OnAdsInitialized();
         else _adsService.Initialized.AddListener(OnAdsInitialized);
 
-        //if (_iapService.IsInitialized) OnIapInitialized();
-        //else _iapService.Initialized.AddListener(OnIapInitialized);
+        if (_iapService.IsInitialized) OnIapInitialized();
+        else _iapService.Initialized.AddListener(OnIapInitialized);
 
         _analytics.SendGameStarted();
 
@@ -51,13 +51,13 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
     private void OnDestroy()
     {
         _adsService.Initialized.RemoveListener(OnAdsInitialized);
-       // _iapService.Initialized.RemoveListener(OnIapInitialized);
+        _iapService.Initialized.RemoveListener(OnIapInitialized);
         _mainController.Dispose();
     }
 
 
     private void OnAdsInitialized() => _adsService.InterstitialPlayer.Play();
-   // public void OnIapInitialized() => _iapService.Buy("product_1");
+    public void OnIapInitialized() => _iapService.Buy("product_1");
 }
 
 

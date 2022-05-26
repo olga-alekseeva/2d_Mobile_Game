@@ -8,6 +8,7 @@ using Object = UnityEngine.Object;
 internal abstract class BaseController:IDisposable
 {
         private List<BaseController> _baseControllers;
+        private List<IRepository> _repositories;
         private List<GameObject> _gameObjects;
         private bool _isDisposed;
         public void Dispose()
