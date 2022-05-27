@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Advertisements;
+using UnityEngine.Events;
 
 namespace Services.Ads.UnityAds
 {
@@ -16,7 +16,6 @@ namespace Services.Ads.UnityAds
         public IAdsPlayer RewardedPlayer { get; private set; }
         public IAdsPlayer BannerPlayer { get; private set; }
         public bool IsInitialized => Advertisement.isInitialized;
-
 
         private void Awake()
         {
@@ -38,7 +37,6 @@ namespace Services.Ads.UnityAds
             BannerPlayer = CreateBanner();
         }
 
-
         private IAdsPlayer CreateInterstitial() =>
             _settings.Interstitial.Enabled
                 ? new InterstitialPlayer(_settings.Interstitial.Id)
@@ -47,11 +45,10 @@ namespace Services.Ads.UnityAds
         private IAdsPlayer CreateRewarded() =>
             _settings.Rewarded.Enabled
             ? new RewardedPlayer(_settings.Rewarded.Id)
-            : (IAdsPlayer) new EmptyPlayer("");
+            : (IAdsPlayer)new EmptyPlayer("");
 
         private IAdsPlayer CreateBanner() =>
             new EmptyPlayer("");
-
 
         void IUnityAdsInitializationListener.OnInitializationComplete()
         {
@@ -62,9 +59,10 @@ namespace Services.Ads.UnityAds
         void IUnityAdsInitializationListener.OnInitializationFailed(UnityAdsInitializationError error, string message) =>
             Error($"Initialization Failed: {error.ToString()} - {message}");
 
-
         private void Log(string message) => Debug.Log(WrapMessage(message));
+
         private void Error(string message) => Debug.LogError(WrapMessage(message));
+
         private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }

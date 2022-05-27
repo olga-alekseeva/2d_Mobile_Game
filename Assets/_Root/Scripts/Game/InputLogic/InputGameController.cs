@@ -1,17 +1,13 @@
-﻿using Game.Cars.RacingCar;
-using Game.Cars;
-using Profile;
+﻿using Game.Cars;
 using Tools;
 using UnityEngine;
 
-
 namespace Game.InputLogic
 {
-    internal class InputGameController:BaseController
+    internal class InputGameController : BaseController
     {
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Input/ArrowInput");
         private BaseInputView _view;
-
 
         public InputGameController(
             SubscriptionProperty<float> leftMove,
@@ -26,7 +22,7 @@ namespace Game.InputLogic
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
             GameObject objectView = Object.Instantiate(prefab);
-            AddGameObjects(objectView);
+            AddGameObject(objectView);
 
             BaseInputView view = objectView.GetComponent<BaseInputView>();
             return view;

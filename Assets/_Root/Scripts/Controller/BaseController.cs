@@ -4,32 +4,29 @@ using UnityEngine;
 
 using Object = UnityEngine.Object;
 
-
-internal abstract class BaseController:IDisposable
+internal abstract class BaseController : IDisposable
 {
-        private List<BaseController> _baseControllers;
-        private List<IRepository> _repositories;
-        private List<GameObject> _gameObjects;
-        private bool _isDisposed;
-        public void Dispose()
-        {
-            if (_isDisposed)
-                return;
+    private List<BaseController> _baseControllers = new List<BaseController>();
+    private List<IRepository> _repositories = new List<IRepository>();
+    private List<GameObject> _gameObjects = new List<GameObject>();
+    private bool _isDisposed;
 
-            _isDisposed = true;
-
-            DisposeBaseControllers();
-            DisposeRepositories();
-            DisposeGameObjects();
-
-            OnDispose();
-        }
-  
-    private void DisposeBaseControllers()
+    public void Dispose()
     {
-        if (_baseControllers == null)
+        if (_isDisposed)
             return;
 
+        _isDisposed = true;
+
+        DisposeBaseControllers();
+        DisposeRepositories();
+        DisposeGameObjects();
+
+        OnDispose();
+    }
+
+    private void DisposeBaseControllers()
+    {
         foreach (BaseController baseController in _baseControllers)
             baseController.Dispose();
 
@@ -38,9 +35,6 @@ internal abstract class BaseController:IDisposable
 
     private void DisposeRepositories()
     {
-        if (_repositories == null)
-            return;
-
         foreach (IRepository repository in _repositories)
             repository.Dispose();
 
@@ -49,17 +43,14 @@ internal abstract class BaseController:IDisposable
 
     private void DisposeGameObjects()
     {
-        if (_gameObjects == null)
-            return;
-
         foreach (GameObject gameObject in _gameObjects)
             Object.Destroy(gameObject);
 
         _gameObjects.Clear();
     }
 
-    protected virtual void OnDispose() { }
-
+    protected virtual void OnDispose()
+    { }
 
     protected void AddController(BaseController baseController)
     {
@@ -79,10 +70,3 @@ internal abstract class BaseController:IDisposable
         _gameObjects.Add(gameObject);
     }
 }
-
-
-
-
-    
-
-

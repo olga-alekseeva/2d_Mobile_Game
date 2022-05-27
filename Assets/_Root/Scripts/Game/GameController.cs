@@ -1,5 +1,4 @@
 using Game.Cars.RacingCar;
-using Game.Cars.LowRiderClose;
 using Game.InputLogic;
 using Game.TapeBackground;
 using Profile;
@@ -20,13 +19,11 @@ namespace Game
             var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.currentCar);
             AddController(inputGameController);
 
-            
             var racingCarController = new RacingCarController();
             AddController(racingCarController);
 
             //var lowRiderClosedController = new LowRiderClosedController();
             //AddController(lowRiderClosedController);
-
         }
     }
 }

@@ -1,21 +1,18 @@
-﻿using UnityEngine;
-using JoostenProductions;
-
+﻿using JoostenProductions;
+using UnityEngine;
 
 namespace Game.InputLogic
 {
-    internal class InputAcceleration: BaseInputView
+    internal class InputAcceleration : BaseInputView
 
     {
         [SerializeField] private float _inputMultiplier = 0.05f;
-
 
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);
 
         private void OnDestroy() =>
             UpdateManager.UnsubscribeFromUpdate(Move);
-
 
         private void Move()
         {

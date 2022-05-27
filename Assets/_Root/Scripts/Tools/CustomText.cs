@@ -15,10 +15,9 @@ namespace Tool
             set => SetText(value);
         }
 
-
         private void OnValidate() => Initialize();
-        private void Start() => Initialize();
 
+        private void Start() => Initialize();
 
         private void Initialize()
         {
@@ -38,12 +37,10 @@ namespace Tool
             return TryGetComponent(out component);
         }
 
-
         public void SetText(string text)
         {
             if (_text != null)
                 _text.text = text;
-
             else if (_textMeshProUgui != null)
                 _textMeshProUgui.text = text;
         }

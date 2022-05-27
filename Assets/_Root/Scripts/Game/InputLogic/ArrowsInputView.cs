@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Game.InputLogic
 {
-    internal class ArrowsInputView:BaseInputView
+    internal class ArrowsInputView : BaseInputView
     {
-      
         private const string HORIZONTAL_AXIS = "Horizontal";
+
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);
 
@@ -35,4 +35,3 @@ namespace Game.InputLogic
         }
     }
 }
-

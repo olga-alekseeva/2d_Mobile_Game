@@ -10,7 +10,9 @@ namespace Services.IAP
         bool IsInitialized { get; }
 
         void Buy(string id);
+
         string GetCost(string productID);
+
         void RestorePurchases();
     }
 }

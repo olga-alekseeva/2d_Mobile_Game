@@ -8,21 +8,24 @@ namespace Services.Ads.UnityAds
     {
         [Header("Game ID")]
         [SerializeField] private string _androidGameId;
+
         [SerializeField] private string _iOsGameId;
 
         [field: Header("Players")]
         [field: SerializeField] public AdsPlayerSettings Interstitial { get; private set; }
+
         [field: SerializeField] public AdsPlayerSettings Rewarded { get; private set; }
         [field: SerializeField] public AdsPlayerSettings Banner { get; private set; }
 
         [field: Header("Settings")]
         [field: SerializeField] public bool TestMode { get; private set; } = true;
-        [field: SerializeField] public bool EnablePerPlacementMode { get; private set; } = true;
 
+        [field: SerializeField] public bool EnablePerPlacementMode { get; private set; } = true;
 
         public string GameId =>
 #if UNITY_EDITOR
             _androidGameId;
+
 #else
             Application.platform switch
             {

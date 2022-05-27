@@ -1,8 +1,8 @@
 using Profile;
+using Services.IAP;
 using Tools;
 using UnityEngine;
 using UnityEngine.Advertisements;
-using Services.IAP;
 using Object = UnityEngine.Object;
 
 namespace UI
@@ -17,26 +17,25 @@ namespace UI
         private readonly IAPService _iapService;
         private readonly EntryPoint _entryPoint;
 
-
         public MainMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame,ShowAds, BuyBomb);
+            _view.Init(StartGame, ShowAds, BuyBomb);
         }
 
         private MainMenuView LoadView(Transform placeForUi)
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
             GameObject objectView = Object.Instantiate(prefab, placeForUi, false);
-            AddGameObjects(objectView);
+            AddGameObject(objectView);
 
             return objectView.GetComponent<MainMenuView>();
         }
 
         private void StartGame()
         {
-             _profilePlayer.CurrentState.Value = GameState.Game;
+            _profilePlayer.CurrentState.Value = GameState.Game;
             _profilePlayer.CurrentState.Value = GameState.Settings;
         }
 
@@ -49,9 +48,7 @@ namespace UI
 
         public void BuyBomb()
         {
-        _iapService.Buy("product_1");
-
+            _iapService.Buy("product_1");
         }
-
     }
 }

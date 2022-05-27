@@ -11,6 +11,7 @@ namespace Services.IAP
 
         [field: Header("Events")]
         [field: SerializeField] public UnityEvent Initialized { get; private set; }
+
         [field: SerializeField] public UnityEvent PurchaseSucceed { get; private set; }
         [field: SerializeField] public UnityEvent PurchaseFailed { get; private set; }
         public bool IsInitialized { get; private set; }
@@ -19,7 +20,6 @@ namespace Services.IAP
         private IStoreController _controller;
         private PurchaseValidator _purchaseValidator;
         private PurchaseRestorer _purchaseRestorer;
-
 
         public void Awake() =>
             InitializeProducts();
@@ -35,7 +35,6 @@ namespace Services.IAP
             Log("Products initialized");
             UnityPurchasing.Initialize(this, builder);
         }
-
 
         void IStoreListener.OnInitialized(IStoreController controller, IExtensionProvider extensionsProvider)
         {
@@ -74,7 +73,6 @@ namespace Services.IAP
             PurchaseFailed?.Invoke();
         }
 
-
         public void Buy(string id)
         {
             if (IsInitialized)
@@ -97,9 +95,10 @@ namespace Services.IAP
                 Error("RestorePurchases FAIL. Not initialized.");
         }
 
-
         private void Log(string message) => Debug.Log(WrapMessage(message));
+
         private void Error(string message) => Debug.LogError(WrapMessage(message));
+
         private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }

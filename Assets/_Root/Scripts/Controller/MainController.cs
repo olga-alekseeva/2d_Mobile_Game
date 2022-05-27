@@ -1,6 +1,6 @@
-using UI;
 using Game;
 using Profile;
+using UI;
 using UnityEngine;
 
 internal class MainController : BaseController
@@ -11,7 +11,6 @@ internal class MainController : BaseController
     private MainMenuController _mainMenuController;
     private SettingsMenuController _settingsMenuController;
     private GameController _gameController;
-
 
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
     {
@@ -30,7 +29,6 @@ internal class MainController : BaseController
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
     }
 
-
     private void OnChangeGameState(GameState state)
     {
         switch (state)
@@ -40,15 +38,18 @@ internal class MainController : BaseController
                 _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
                 break;
+
             case GameState.Game:
                 _gameController = new GameController(_profilePlayer);
                 _mainMenuController?.Dispose();
                 _settingsMenuController?.Dispose();
                 break;
+
             case GameState.Settings:
                 _settingsMenuController = new SettingsMenuController(_placeForUi, _profilePlayer);
-                
+
                 break;
+
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();

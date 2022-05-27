@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Purchasing;
-using UnityEngine.Purchasing.Security;
 
 namespace Services.IAP
 {
@@ -32,7 +31,6 @@ namespace Services.IAP
             Log(logMessage);
             return isValid;
         }
-
 
         private void Log(string message) =>
             Debug.Log($"[{GetType().Name}] {message}");

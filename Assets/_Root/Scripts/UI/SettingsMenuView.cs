@@ -2,14 +2,13 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-
 namespace UI
 {
     public class SettingsMenuView : MonoBehaviour
     {
         [SerializeField] private Button _buttonBack;
 
-        public void Init(UnityAction backToMenu) => 
+        public void Init(UnityAction backToMenu) =>
             _buttonBack.onClick.AddListener(backToMenu);
 
         public void OnDestroy() =>

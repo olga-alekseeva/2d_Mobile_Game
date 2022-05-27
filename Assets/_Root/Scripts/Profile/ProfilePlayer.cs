@@ -1,8 +1,7 @@
-using Tools;
-using Game.Cars.RacingCar;
-using Game.Cars.LowRiderClose;
 using Game.Cars;
-using UnityEngine;
+using Game.Cars.LowRiderClose;
+using Game.Cars.RacingCar;
+using Tools;
 
 namespace Profile
 {
@@ -12,42 +11,35 @@ namespace Profile
         public CarModel currentCar;
         public readonly CarState carState;
 
-
         public ProfilePlayer(float speedCar, GameState initialState, CarState carState) : this(speedCar)
         {
             CurrentState.Value = initialState;
             this.carState = carState;
-           
-            ChooseCar(speedCar);
 
-            
+            ChooseCar(speedCar);
         }
+
         private void ChooseCar(float speedCar)
         {
-            
-                switch (carState)
-                {
-                    case CarState.LowRiderClose:
-                        currentCar = new LowRiderCloseModel(speedCar);
-                        break;
-                    case CarState.RacingCar:
-                        currentCar = new RacingCarModel(speedCar);
-                        break;
-                    default:
-                        currentCar = null;
-                        break;
+            switch (carState)
+            {
+                case CarState.LowRiderClose:
+                    currentCar = new LowRiderCloseModel(speedCar);
+                    break;
 
-                }
-          
+                case CarState.RacingCar:
+                    currentCar = new RacingCarModel(speedCar);
+                    break;
+
+                default:
+                    currentCar = null;
+                    break;
+            }
         }
 
         public ProfilePlayer(float speedCar)
         {
             CurrentState = new SubscriptionProperty<GameState>();
-
         }
-
-        
- 
     }
 }

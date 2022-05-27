@@ -1,6 +1,5 @@
 namespace Tools
 {
-
     internal readonly struct ResourcePath
     {
         public readonly string PathResource;

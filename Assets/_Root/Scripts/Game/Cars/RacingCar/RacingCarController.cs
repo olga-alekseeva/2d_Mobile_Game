@@ -19,7 +19,7 @@ namespace Game.Cars.RacingCar
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab);
-            AddGameObjects(objectView);
+            AddGameObject(objectView);
 
             return objectView.GetComponent<CarView>();
         }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 internal interface IRepository : IDisposable
 {
-
 }
 
 internal abstract class Repository<TKey, TValue, TConfig> : IRepository
@@ -11,13 +10,11 @@ internal abstract class Repository<TKey, TValue, TConfig> : IRepository
     private readonly Dictionary<TKey, TValue> _items;
     public IReadOnlyDictionary<TKey, TValue> Items => _items;
 
-
     protected Repository(IEnumerable<TConfig> configs) =>
         _items = CreateItems(configs);
 
     public void Dispose() =>
         _items.Clear();
-
 
     private Dictionary<TKey, TValue> CreateItems(IEnumerable<TConfig> configs)
     {
@@ -30,5 +27,6 @@ internal abstract class Repository<TKey, TValue, TConfig> : IRepository
     }
 
     protected abstract TKey GetKey(TConfig config);
+
     protected abstract TValue CreateItem(TConfig config);
 }

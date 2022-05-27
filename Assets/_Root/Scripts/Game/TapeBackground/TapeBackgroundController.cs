@@ -13,7 +13,6 @@ namespace Game.TapeBackground
 
         private TapeBackgroundView _view;
 
-
         public TapeBackgroundController(
             SubscriptionProperty<float> leftMove,
             SubscriptionProperty<float> rightMove)
@@ -36,12 +35,11 @@ namespace Game.TapeBackground
             _rightMove.UnSubscribeOnChange(MoveRight);
         }
 
-
         private TapeBackgroundView LoadView()
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
             GameObject objectView = Object.Instantiate(prefab);
-            AddGameObjects(objectView);
+            AddGameObject(objectView);
 
             return objectView.GetComponent<TapeBackgroundView>();
         }

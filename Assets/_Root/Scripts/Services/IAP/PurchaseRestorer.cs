@@ -7,10 +7,8 @@ namespace Services.IAP
     {
         private readonly IExtensionProvider _extensionProvider;
 
-
         public PurchaseRestorer(IExtensionProvider extensionProvider) =>
             _extensionProvider = extensionProvider;
-
 
         public void Restore()
         {

@@ -7,20 +7,22 @@ namespace Services.Ads.UnityAds
     internal abstract class UnityAdsPlayer : IAdsPlayer, IUnityAdsListener
     {
         public event Action Started;
+
         public event Action Finished;
+
         public event Action Failed;
+
         public event Action Skipped;
+
         public event Action BecomeReady;
 
         protected readonly string _id;
-
 
         protected UnityAdsPlayer(string id)
         {
             _id = id;
             Advertisement.AddListener(this);
         }
-
 
         public void Play()
         {
@@ -30,8 +32,8 @@ namespace Services.Ads.UnityAds
         }
 
         protected abstract void OnPlaying();
-        protected abstract void Load();
 
+        protected abstract void Load();
 
         void IUnityAdsListener.OnUnityAdsReady(string placementId)
         {
@@ -81,7 +83,9 @@ namespace Services.Ads.UnityAds
         private bool IsIdMy(string id) => _id == id;
 
         private void Log(string message) => Debug.Log(WrapMessage(message));
+
         private void Error(string message) => Debug.LogError(WrapMessage(message));
+
         private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }

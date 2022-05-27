@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 
-
 namespace Tools
 {
-    internal class DontDestroyOnLoadObject:MonoBehaviour
+    internal class DontDestroyOnLoadObject : MonoBehaviour
     {
         private void Awake()
         {
-            if(enabled)
+            if (enabled)
                 DontDestroyOnLoad(gameObject);
         }
     }

@@ -3,29 +3,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityStandardAssets.CrossPlatformInput;
 
-
 namespace Game.InputLogic
 {
-    internal class FloatInputJoystick: BaseInputView, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    internal class FloatInputJoystick : BaseInputView, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         [Header("Components")]
         [SerializeField] private Joystick _joystick;
+
         [SerializeField] private CanvasGroup _container;
 
         [Header("Settings")]
         [SerializeField] private float _enabledAlpha = 1;
+
         [SerializeField] private float _disabledAlpha = 0;
         [SerializeField] private float _inputMultiplier = 10;
 
         private bool _usingJoystick;
-
 
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);
 
         private void OnDestroy() =>
             UpdateManager.UnsubscribeFromUpdate(Move);
-
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -77,4 +76,3 @@ namespace Game.InputLogic
         }
     }
 }
-

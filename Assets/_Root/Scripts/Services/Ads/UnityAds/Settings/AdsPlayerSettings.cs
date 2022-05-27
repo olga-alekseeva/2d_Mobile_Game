@@ -13,6 +13,7 @@ namespace Services.Ads.UnityAds.Settings
         public string Id =>
 #if UNITY_EDITOR
             _androidId;
+
 #else
             Application.platform switch
             {

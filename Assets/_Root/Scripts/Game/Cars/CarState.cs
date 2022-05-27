@@ -1,9 +1,5 @@
-﻿
-
-
-    public enum CarState
-    {
-        LowRiderClose,
-        RacingCar
-    }
-
+﻿public enum CarState
+{
+    LowRiderClose,
+    RacingCar
+}
