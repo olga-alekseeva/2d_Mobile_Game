@@ -9,28 +9,27 @@ namespace Features.Inventory
     {
         IReadOnlyList<string> EquippedItems { get; }
         void EquipItem(string item);    
-        void UnequipItem(string item);
-        bool isEquipped(string item);    
+        void UnequipItem(string itemId);
+        bool IsEquipped(string itemId);    
     }
     internal class InventoryModel : IInventoryModel
     {
-        private readonly List<string> _equippedItems = new();
+        private readonly List<string> _equippedItems = new List<string>();
         public IReadOnlyList<string> EquippedItems => _equippedItems;
 
-        public void EquipItem(string item)
+        public void EquipItem(string itemId)
         {
-            if(!isEquipped(item))
-                _equippedItems.Add(item);   
+            if(!IsEquipped(itemId))
+                _equippedItems.Add(itemId);   
         }
 
-        public bool isEquiped(string item)
+        public void UnequipItem(string itemId)
         {
-            throw new System.NotImplementedException();
+            if (IsEquipped(itemId))
+                _equippedItems.Remove(itemId);
         }
+        public bool IsEquipped(string itemId) =>
+            _equippedItems.Contains(itemId);
 
-        public void UnequipItem(string item)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

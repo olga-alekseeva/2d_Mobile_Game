@@ -1,3 +1,4 @@
+using Features.Inventory;
 using Game.Cars;
 using Game.Cars.LowRiderClose;
 using Game.Cars.RacingCar;
@@ -10,11 +11,14 @@ namespace Profile
         public readonly SubscriptionProperty<GameState> CurrentState;
         public CarModel currentCar;
         public readonly CarState carState;
+        public readonly InventoryModel Inventory;
+
 
         public ProfilePlayer(float speedCar, GameState initialState, CarState carState) : this(speedCar)
         {
             CurrentState.Value = initialState;
             this.carState = carState;
+            Inventory = new InventoryModel();
 
             ChooseCar(speedCar);
         }
