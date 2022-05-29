@@ -17,10 +17,10 @@ namespace UI
         private readonly IAPService _iapService;
         private readonly EntryPoint _entryPoint;
 
-        public MainMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public MainMenuController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
-            _view = LoadView(placeForUi);
+            _view = LoadView(placeForUI);
             _view.Init(StartGame, ShowAds, BuyBomb, ShowShed);
         }
 
@@ -52,7 +52,7 @@ namespace UI
         }
         private void ShowShed()
         {
-            _profilePlayer.CurrentState.Value = GameState.Inventory;
+            _profilePlayer.CurrentState.Value = GameState.Shed;
         }
     }
 }

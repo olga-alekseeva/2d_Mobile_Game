@@ -27,6 +27,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3604883519667951888}
   m_Father: {fileID: 0}
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5506367837468019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a22ed1dd5274b70878655b81015ce91, type: 3}
+  m_Script: {fileID: 11500000, guid: c804bfb2772e6f543b774a28eb3f623a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _abilityButtonPrefab: {fileID: 5041407327061402687, guid: c07299ed024e84afd8192df41e0c8209, type: 3}
@@ -78,6 +79,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8030015954263822239}
   m_RootOrder: 0

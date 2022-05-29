@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521aa16ea47ef1c4d92812617c4245f3, type: 3}
-  m_Name: ItemConfigDataSource
+  m_Script: {fileID: 11500000, guid: f8835e4477b73204793257d7909a35f1, type: 3}
+  m_Name: Brake
   m_EditorClassIdentifier: 
-  _itemConfigs:
-  - {fileID: 11400000, guid: fb4f13ec89f46624489bd41a9e773f0f, type: 2}
-  - {fileID: 11400000, guid: be6500a709bc7a84fbd5dcc1b845808e, type: 2}
+  <Id>k__BackingField: 
+  <Title>k__BackingField: 
+  <Icon>k__BackingField: {fileID: 0}

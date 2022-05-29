@@ -22,7 +22,7 @@ namespace Game
         private readonly InputGameController _inputGameController;
         private readonly TransportController _transportController;
         private readonly AbilitiesController _abilitiesController;
-        public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public GameController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
             var leftMoveDiff = new SubscriptionProperty<float>();
@@ -31,7 +31,7 @@ namespace Game
             _tapeBackgroundController = CreateTapeBackground();
             _inputGameController = CreateInputGameController();
             _transportController = CreateTransportController();
-            _abilitiesController = CreateAbilitiesController(placeForUi);
+            _abilitiesController = CreateAbilitiesController(placeForUI);
 
         }
         private TapeBackgroundController CreateTapeBackground()
@@ -65,9 +65,9 @@ namespace Game
             return transportController;
         }
 
-        private AbilitiesController CreateAbilitiesController(Transform placeForUi)
+        private AbilitiesController CreateAbilitiesController(Transform placeForUI)
         {
-            var abilitiesController = new AbilitiesController(placeForUi, _transportController);
+            var abilitiesController = new AbilitiesController(placeForUI, _transportController);
             AddController(abilitiesController);
 
             return abilitiesController;

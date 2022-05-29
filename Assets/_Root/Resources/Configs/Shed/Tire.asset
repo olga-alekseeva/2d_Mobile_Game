@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb1e9beddf9fc943badf70c6c60c9a1, type: 3}
-  m_Name: Brake
+  m_Name: Tire
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: be6500a709bc7a84fbd5dcc1b845808e, type: 2}
+  _itemConfig: {fileID: 11400000, guid: fb4f13ec89f46624489bd41a9e773f0f, type: 2}
   <Type>k__BackingField: 1
-  <Value>k__BackingField: 1
+  <Value>k__BackingField: 3

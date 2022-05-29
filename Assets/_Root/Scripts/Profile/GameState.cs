@@ -6,6 +6,6 @@ namespace Profile
         Start,
         Game,
         Settings,
-        Inventory
+        Shed
     }
 }
