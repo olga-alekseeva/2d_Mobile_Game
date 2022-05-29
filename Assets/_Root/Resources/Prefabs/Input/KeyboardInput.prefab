@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8648010154669063644}
   - component: {fileID: 1506001875329472414}
   m_Layer: 0
-  m_Name: ArrowInput
+  m_Name: KeyboardInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

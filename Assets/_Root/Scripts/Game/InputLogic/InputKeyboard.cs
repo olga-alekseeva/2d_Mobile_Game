@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.InputLogic
 {
-    internal class ArrowsInputView : BaseInputView
+    internal class InputKeyboard : BaseInputView
     {
         [SerializeField] private float _inputMultiplier = 0.01f;
 

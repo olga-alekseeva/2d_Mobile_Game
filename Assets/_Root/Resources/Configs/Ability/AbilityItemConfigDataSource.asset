@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5a6000886f4394cacdbdf0f1ee5505, type: 3}
   m_Name: AbilityItemConfigDataSource
   m_EditorClassIdentifier: 
-  _abilityConfigs: []
+  _abilityConfigs:
+  - {fileID: 11400000, guid: cd9be811d1c55d34eb2c588a08f77260, type: 2}

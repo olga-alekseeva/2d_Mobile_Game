@@ -30,8 +30,9 @@ internal class MainController : BaseController
         _mainMenuController?.Dispose();
         _gameController?.Dispose();
         _settingsMenuController?.Dispose();
+        _shedController?.Dispose();
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
-        _inventoryController?.Dispose();
+        
     }
 
     private void OnChangeGameState(GameState state)
@@ -40,13 +41,15 @@ internal class MainController : BaseController
         {
             case GameState.Start:
                 _mainMenuController = new MainMenuController(_placeForUI, _profilePlayer);
+                _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
                 _shedController?.Dispose();
-                _gameController?.Dispose();
                 break;
 
             case GameState.Settings:
                 _settingsMenuController = new SettingsMenuController(_placeForUI, _profilePlayer);
+                _mainMenuController?.Dispose();
+                _gameController?.Dispose();
                 _shedController?.Dispose();
                 break;
 
@@ -58,15 +61,15 @@ internal class MainController : BaseController
                 break;
             case GameState.Shed:
                 _shedController = new ShedController(_placeForUI, _profilePlayer);
+                _mainMenuController?.Dispose();
                 _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
-                _mainMenuController?.Dispose();
                 break;
 
             default:
                 _mainMenuController?.Dispose();
-                _settingsMenuController?.Dispose();
                 _gameController?.Dispose();
+                _settingsMenuController?.Dispose();
                 _shedController?.Dispose();
                 break;
         }
