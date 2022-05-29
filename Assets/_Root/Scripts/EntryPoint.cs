@@ -1,3 +1,4 @@
+using Game;
 using Profile;
 using Services.Ads.UnityAds;
 using Services.Analytics;
@@ -9,8 +10,9 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
 {
     private const float SpeedCar = 15f;
     private const GameState InitialState = GameState.Start;
+    private const TransportType TransportType = Game.TransportType.RacingCar;
     private MainController _mainController;
-    private CarState _carState;
+    private TransportType _carType;
 
     [SerializeField] private Transform _placeForUI;
     [SerializeField] private AnalyticsManager _analytics;
@@ -19,7 +21,7 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
 
     private void Awake()
     {
-        var profilePlayer = new ProfilePlayer(SpeedCar, InitialState, CarState.RacingCar);
+        var profilePlayer = new ProfilePlayer(SpeedCar, TransportType, InitialState);
         _mainController = new MainController(_placeForUI, profilePlayer);
 
         if (_adsService.IsInitialized) OnAdsInitialized();

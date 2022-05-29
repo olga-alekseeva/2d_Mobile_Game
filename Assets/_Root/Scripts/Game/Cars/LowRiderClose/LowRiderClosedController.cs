@@ -1,14 +1,15 @@
 using Tools;
 using UnityEngine;
+using Game.Transport;
 
 namespace Game.Cars.LowRiderClose
 {
-    internal class LowRiderClosedController : BaseController
+    internal class LowRiderClosedController : TransportController
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Cars/LowRiderClose");
         private readonly CarView _view;
 
-        public GameObject ViewGameObject => _view.car;
+        public override GameObject ViewGameObject => _view.gameObject;
 
         public LowRiderClosedController()
         {

@@ -21,7 +21,7 @@ namespace UI
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, ShowAds, BuyBomb);
+            _view.Init(StartGame, ShowAds, BuyBomb, ShowShed);
         }
 
         private MainMenuView LoadView(Transform placeForUi)
@@ -49,6 +49,10 @@ namespace UI
         public void BuyBomb()
         {
             _iapService.Buy("product_1");
+        }
+        private void ShowShed()
+        {
+            _profilePlayer.CurrentState.Value = GameState.Inventory;
         }
     }
 }

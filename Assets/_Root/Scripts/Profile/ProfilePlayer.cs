@@ -1,49 +1,27 @@
-using Features.Inventory;
+using Game;
 using Game.Cars;
 using Game.Cars.LowRiderClose;
 using Game.Cars.RacingCar;
+using Game.Transport;
 using Tools;
+using Features.Inventory;
 
 namespace Profile
 {
     internal class ProfilePlayer
     {
         public readonly SubscriptionProperty<GameState> CurrentState;
-        public CarModel currentCar;
-        public readonly CarState carState;
+        public readonly TransportModel CurrentTransport;
         public readonly InventoryModel Inventory;
 
 
-        public ProfilePlayer(float speedCar, GameState initialState, CarState carState) : this(speedCar)
+        public ProfilePlayer(float transportSpeed, TransportType transportType, GameState initialState)
         {
-            CurrentState.Value = initialState;
-            this.carState = carState;
+            CurrentState = new SubscriptionProperty<GameState>(initialState);
+            CurrentTransport = new TransportModel(transportSpeed, transportType);
             Inventory = new InventoryModel();
-
-            ChooseCar(speedCar);
         }
 
-        private void ChooseCar(float speedCar)
-        {
-            switch (carState)
-            {
-                case CarState.LowRiderClose:
-                    currentCar = new LowRiderCloseModel(speedCar);
-                    break;
-
-                case CarState.RacingCar:
-                    currentCar = new RacingCarModel(speedCar);
-                    break;
-
-                default:
-                    currentCar = null;
-                    break;
-            }
-        }
-
-        public ProfilePlayer(float speedCar)
-        {
-            CurrentState = new SubscriptionProperty<GameState>();
-        }
+       
     }
 }

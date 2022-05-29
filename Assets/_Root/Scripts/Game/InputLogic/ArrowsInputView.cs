@@ -5,7 +5,8 @@ namespace Game.InputLogic
 {
     internal class ArrowsInputView : BaseInputView
     {
-        private const string HORIZONTAL_AXIS = "Horizontal";
+        [SerializeField] private float _inputMultiplier = 0.01f;
+
 
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);
@@ -13,25 +14,16 @@ namespace Game.InputLogic
         private void OnDestroy() =>
             UpdateManager.UnsubscribeFromUpdate(Move);
 
+
         private void Move()
         {
-            Vector3 direction = CalcDirection();
-            float moveValue = _speed * Time.deltaTime * direction.x;
-            float abs = Mathf.Abs(moveValue);
-            float sign = Mathf.Sign(moveValue);
+            float moveValue = _speed * _inputMultiplier * Time.deltaTime;
 
-            if (sign > 0)
-                OnRightMove(abs);
-            else
-                OnLeftMove(abs);
-        }
+            if (Input.GetKey(KeyCode.LeftArrow))
+                OnLeftMove(moveValue);
 
-        private Vector3 CalcDirection()
-        {
-            Vector3 direction = Vector3.zero;
-            direction.x = Input.GetAxis(HORIZONTAL_AXIS);
-
-            return direction;
+            if (Input.GetKey(KeyCode.RightArrow))
+                OnRightMove(moveValue);
         }
     }
 }
