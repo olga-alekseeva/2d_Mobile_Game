@@ -1,5 +1,5 @@
-using Services.Ads.UnityAds.Settings;
 using UnityEngine;
+using Services.Ads.UnityAds.Settings;
 
 namespace Services.Ads.UnityAds
 {

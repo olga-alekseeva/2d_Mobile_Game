@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using Tools;
+using UnityEngine;
 using UnityEngine.UI;
-using Tool;
 using UnityEngine.Events;
 
 namespace Features.Inventory.Items

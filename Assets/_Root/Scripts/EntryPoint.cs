@@ -1,9 +1,9 @@
 using Game;
 using Profile;
-using Services.Ads.UnityAds;
-using Services.Analytics;
-using Services.IAP;
 using UnityEngine;
+using Services.IAP;
+using Services.Analytics;
+using Services.Ads.UnityAds;
 using UnityEngine.Advertisements;
 
 internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener

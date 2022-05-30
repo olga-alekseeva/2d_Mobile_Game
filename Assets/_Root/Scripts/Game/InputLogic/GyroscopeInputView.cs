@@ -1,6 +1,6 @@
-using JoostenProductions;
 using Tools;
 using UnityEngine;
+using JoostenProductions;
 
 namespace Game.InputLogic
 {

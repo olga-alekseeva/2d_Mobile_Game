@@ -1,9 +1,6 @@
 using Game;
-using Game.Cars;
-using Game.Cars.LowRiderClose;
-using Game.Cars.RacingCar;
-using Game.Transport;
 using Tools;
+using Game.Transport;
 using Features.Inventory;
 
 namespace Profile

@@ -1,9 +1,9 @@
-using Features.Inventory;
-using Features.Shed;
+using UI;
 using Game;
 using Profile;
-using UI;
 using UnityEngine;
+using Features.Shed;
+using Features.Inventory;
 
 internal class MainController : BaseController
 {

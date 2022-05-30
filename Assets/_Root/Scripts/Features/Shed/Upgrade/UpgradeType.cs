@@ -1,6 +1,4 @@
-﻿
-
-namespace Features.Shed.Upgrade
+﻿namespace Features.Shed.Upgrade
 {
     internal enum UpgradeType
     {

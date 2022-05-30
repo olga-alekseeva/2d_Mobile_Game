@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Features.Inventory.Items;
 using System.Collections.Generic;
-using System;
 
 namespace Features.Inventory
 {

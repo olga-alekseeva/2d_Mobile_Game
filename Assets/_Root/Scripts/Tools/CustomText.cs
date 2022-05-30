@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Tool
+namespace Tools
 {
     public class CustomText : MonoBehaviour
     {

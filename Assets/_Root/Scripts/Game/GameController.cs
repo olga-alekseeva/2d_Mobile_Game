@@ -1,13 +1,12 @@
 using Tools;
-using Profile;
 using System;
+using Profile;
+using UnityEngine;
+using Game.Transport;
 using Game.InputLogic;
 using Game.Cars.RacingCar;
 using Game.TapeBackground;
 using Features.AbilitySystem;
-using UnityEngine;
-using System.Net;
-using Game.Transport;
 using Game.Cars.LowRiderClose;
 
 namespace Game
@@ -36,10 +35,10 @@ namespace Game
         }
         private TapeBackgroundController CreateTapeBackground()
         {
-            var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
-            AddController(tapeBackgroundController);
+            //var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
+            //AddController(tapeBackgroundController);
 
-            return tapeBackgroundController;
+            return null;
         }
 
         private InputGameController CreateInputGameController()
