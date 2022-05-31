@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8835e4477b73204793257d7909a35f1, type: 3}
-  m_Name: Transmission
+  m_Script: {fileID: 11500000, guid: cbb1e9beddf9fc943badf70c6c60c9a1, type: 3}
+  m_Name: Spring
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: transmission
-  <Title>k__BackingField: Transmission
-  <Icon>k__BackingField: {fileID: 7788287979965792003, guid: 907a19a0cc99bf04288d3b0c0d6afcfb, type: 3}
+  _itemConfig: {fileID: 11400000, guid: 41fed82317a01fc4883358626c6d8432, type: 2}
+  <Type>k__BackingField: 2
+  <Value>k__BackingField: 2

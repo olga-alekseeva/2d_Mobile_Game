@@ -9,6 +9,7 @@ using UnityEngine.Advertisements;
 internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
 {
     private const float SpeedCar = 15f;
+    private const float JumpHeightCar = 8f;
     private const GameState InitialState = GameState.Start;
     private const TransportType TransportType = Game.TransportType.RacingCar;
     private MainController _mainController;
@@ -21,7 +22,7 @@ internal class EntryPoint : MonoBehaviour, IUnityAdsInitializationListener
 
     private void Awake()
     {
-        var profilePlayer = new ProfilePlayer(SpeedCar, TransportType, InitialState);
+        var profilePlayer = new ProfilePlayer(SpeedCar, JumpHeightCar,TransportType, InitialState);
         _mainController = new MainController(_placeForUI, profilePlayer);
 
         if (_adsService.IsInitialized) OnAdsInitialized();

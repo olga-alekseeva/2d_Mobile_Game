@@ -35,10 +35,10 @@ namespace Game
         }
         private TapeBackgroundController CreateTapeBackground()
         {
-            //var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
-            //AddController(tapeBackgroundController);
+            var tapeBackgroundController = new TapeBackgroundController(_leftMoveDiff, _rightMoveDiff);
+            AddController(tapeBackgroundController);
 
-            return null;
+            return tapeBackgroundController;
         }
 
         private InputGameController CreateInputGameController()
