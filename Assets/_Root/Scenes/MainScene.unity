@@ -260,6 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693446803}
+  - component: {fileID: 693446804}
   - component: {fileID: 693446802}
   m_Layer: 0
   m_Name: Services
@@ -298,6 +299,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693446804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693446801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602fee8479a219148b3e8ec1ebaed7d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _adsService: {fileID: 2100791541}
+  _iapService: {fileID: 769968289}
+  _analyticsManager: {fileID: 623467756}
 --- !u!1 &769968287
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,9 +468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeForUI: {fileID: 1984824462}
-  _analytics: {fileID: 623467756}
-  _adsService: {fileID: 2100791541}
-  _iapService: {fileID: 769968289}
 --- !u!114 &1368995934
 MonoBehaviour:
   m_ObjectHideFlags: 0
