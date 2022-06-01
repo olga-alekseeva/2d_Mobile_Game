@@ -1,9 +1,11 @@
 using Tools;
 using System;
 using Profile;
+using Services;
 using UnityEngine;
 using Game.Transport;
 using Game.InputLogic;
+using Services.Analytics;
 using Game.Cars.RacingCar;
 using Game.TapeBackground;
 using Features.AbilitySystem;
@@ -31,6 +33,8 @@ namespace Game
             _inputGameController = CreateInputGameController();
             _transportController = CreateTransportController();
             _abilitiesController = CreateAbilitiesController(placeForUI);
+
+            ServiceRoster.Analytics.SendGameStarted();
 
         }
         private TapeBackgroundController CreateTapeBackground()

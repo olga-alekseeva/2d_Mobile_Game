@@ -6,28 +6,31 @@ namespace UI
 {
     public class MainMenuView : MonoBehaviour
     {
-        [SerializeField] private Button _buttonStart;
-        [SerializeField] private Button _buttonAds;
-        [SerializeField] private Button _buttonBuyBomb;
-        [SerializeField] private Button _buttonShed;
-        [SerializeField] private Button _buttonSettings;
-        private MainMenuController _mainMenuController;
+        [Header("Settings")]
+        [SerializeField] private string _productId;
 
-        public void Init(UnityAction startGame, UnityAction showAds, UnityAction buyBomb,
-            UnityAction shed, UnityAction settings)
+        [Header("Buttons")]
+        [SerializeField] private Button _buttonStart;
+        [SerializeField] private Button _buttonSettings;
+        [SerializeField] private Button _buttonShed;
+        [SerializeField] private Button _buttonAdsReward;
+        [SerializeField] private Button _buttonBuyProduct;
+        
+        public void Init(UnityAction startGame, UnityAction settings, 
+            UnityAction shed, UnityAction adsReward, UnityAction<string> buyProduct)
         {
             _buttonStart.onClick.AddListener(startGame);
-            _buttonAds.onClick.AddListener(showAds);
-            _buttonBuyBomb.onClick.AddListener(buyBomb);
-            _buttonShed.onClick.AddListener(shed);
             _buttonSettings.onClick.AddListener(settings);
+            _buttonShed.onClick.AddListener(shed);
+            _buttonAdsReward.onClick.AddListener(adsReward);
+            _buttonBuyProduct.onClick.AddListener(() => buyProduct(_productId));
         }
 
         public void OnDestroy()
         {
             _buttonStart.onClick.RemoveAllListeners();
-            _buttonAds.onClick.RemoveAllListeners();
-            _buttonBuyBomb.onClick.RemoveAllListeners();
+            _buttonAdsReward.onClick.RemoveAllListeners();
+            _buttonBuyProduct.onClick.RemoveAllListeners();
             _buttonShed.onClick.RemoveAllListeners();
             _buttonSettings.onClick.RemoveAllListeners();
         }
