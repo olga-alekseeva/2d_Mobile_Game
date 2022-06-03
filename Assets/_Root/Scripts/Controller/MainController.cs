@@ -15,6 +15,7 @@ internal class MainController : BaseController
     private GameController _gameController;
     private InventoryController _inventoryController;
     private ShedController _shedController;
+    private BackButtonController _backButtonController;
 
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
     {
@@ -31,6 +32,7 @@ internal class MainController : BaseController
         _gameController?.Dispose();
         _settingsMenuController?.Dispose();
         _shedController?.Dispose();
+        _backButtonController?.Dispose();
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
         
     }
@@ -43,6 +45,7 @@ internal class MainController : BaseController
                 _mainMenuController = new MainMenuController(_placeForUI, _profilePlayer);
                 _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
+                _backButtonController?.Dispose();
                 _shedController?.Dispose();
                 break;
 
@@ -50,11 +53,13 @@ internal class MainController : BaseController
                 _settingsMenuController = new SettingsMenuController(_placeForUI, _profilePlayer);
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _backButtonController?.Dispose();
                 _shedController?.Dispose();
                 break;
 
             case GameState.Game:
                 _gameController = new GameController(_placeForUI,_profilePlayer);
+                _backButtonController = new BackButtonController(_placeForUI,_profilePlayer);
                 _mainMenuController?.Dispose();
                 _settingsMenuController?.Dispose();
                 _shedController?.Dispose();
@@ -63,11 +68,13 @@ internal class MainController : BaseController
                 _shedController = new ShedController(_placeForUI, _profilePlayer);
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _backButtonController?.Dispose();
                 _settingsMenuController?.Dispose();
                 break;
 
             default:
                 _mainMenuController?.Dispose();
+                _backButtonController?.Dispose();
                 _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
                 _shedController?.Dispose();

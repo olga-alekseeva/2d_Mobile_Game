@@ -13,9 +13,6 @@ namespace UI
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/UI/MainMenu");
         private readonly ProfilePlayer _profilePlayer;
         private readonly MainMenuView _view;
-        private readonly SettingsMenuView _settingsView;
-        private readonly IAPService _iapService;
-        private readonly EntryPoint _entryPoint;
 
         public MainMenuController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
