@@ -8,22 +8,22 @@ namespace Game.TapeBackground
         private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Background");
 
         private readonly SubscriptionProperty<float> _diff;
-        private readonly ISubscriptionProperty<float> _leftMove;
-        private readonly ISubscriptionProperty<float> _rightMove;
+        private readonly SubscriptionProperty<float> _leftMove;
+        private readonly SubscriptionProperty<float> _rightMove;
 
         private TapeBackgroundView _view;
 
         public TapeBackgroundController(
             SubscriptionProperty<float> leftMove,
-            SubscriptionProperty<float> rightMove)
+           SubscriptionProperty<float> rightMove)
         {
             _view = LoadView();
             _diff = new SubscriptionProperty<float>();
 
+            _view.Init(_diff);
+
             _leftMove = leftMove;
             _rightMove = rightMove;
-
-            _view.Init(_diff);
 
             _leftMove.SubscribeOnChange(MoveLeft);
             _rightMove.SubscribeOnChange(MoveRight);

@@ -43,7 +43,6 @@ namespace UI
         private void StartGame()
         {
             _profilePlayer.CurrentState.Value = GameState.Game;
-           _profilePlayer.CurrentState.Value = GameState.Settings;
         }  
         private void ShowShed()
         {

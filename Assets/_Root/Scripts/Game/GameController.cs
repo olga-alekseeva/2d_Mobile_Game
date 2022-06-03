@@ -26,8 +26,8 @@ namespace Game
         public GameController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
-            var leftMoveDiff = new SubscriptionProperty<float>();
-            var rightMoveDiff = new SubscriptionProperty<float>();
+            _leftMoveDiff = new SubscriptionProperty<float>();
+            _rightMoveDiff = new SubscriptionProperty<float>();
 
             _tapeBackgroundController = CreateTapeBackground();
             _inputGameController = CreateInputGameController();
