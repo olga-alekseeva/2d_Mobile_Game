@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bd9d79baacc274fb895ec6390bd95e, type: 3}
   m_Name: CarConfig
   m_EditorClassIdentifier: 
-  SpeedCar: 0
+  SpeedCar: 80
   JumpHeightCar: 8
   InitialState: 1
-  TransportType: 0
+  TransportType: 1

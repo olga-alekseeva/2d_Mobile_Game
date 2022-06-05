@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85266c7a83dafba49b599d4226d1d675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _carConfig: {fileID: 11400000, guid: 5c2beee1aea3bd64da9ded5056453798, type: 2}
   _placeForUI: {fileID: 1984824462}
 --- !u!114 &1368995934
 MonoBehaviour:
