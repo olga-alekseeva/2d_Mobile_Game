@@ -6,8 +6,7 @@ using Object = UnityEngine.Object;
 
 internal abstract class BaseController : IDisposable
 {
-    private List<BaseController> _baseControllers = new List<BaseController>();
-    private List<IRepository> _repositories = new List<IRepository>();
+    private List <IDisposable> _disposables = new List<IDisposable>();
     private List<GameObject> _gameObjects = new List<GameObject>();
     private bool _isDisposed;
 
@@ -18,27 +17,19 @@ internal abstract class BaseController : IDisposable
 
         _isDisposed = true;
 
-        DisposeBaseControllers();
-        DisposeRepositories();
+        DisposeDisposables();
         DisposeGameObjects();
 
         OnDispose();
     }
 
-    private void DisposeBaseControllers()
+    private void DisposeDisposables()
     {
-        foreach (BaseController baseController in _baseControllers)
-            baseController.Dispose();
-
-        _baseControllers.Clear();
-    }
-
-    private void DisposeRepositories()
-    {
-        foreach (IRepository repository in _repositories)
-            repository.Dispose();
-
-        _repositories.Clear();
+        if (_disposables == null)
+            return;
+        foreach (IDisposable disposable in _disposables) 
+            disposable.Dispose();
+        _disposables.Clear();
     }
 
     private void DisposeGameObjects()
@@ -52,28 +43,27 @@ internal abstract class BaseController : IDisposable
     protected virtual void OnDispose()
     { }
 
-    protected void AddController(BaseController baseController)
-    {
-        _baseControllers ??= new List<BaseController>();
-        _baseControllers.Add(baseController);
-    }
-
-    protected void AddRepository(IRepository repository)
-    {
-        _repositories ??= new List<IRepository>();
-        _repositories.Add(repository);
-    }
-
+    protected void AddController(BaseController baseController) => 
+        AddDisposable(baseController);
+    protected void AddRepository(IRepository repository)=>
+        AddDisposable(repository);
     protected void AddGameObject(GameObject gameObject)
     {
         _gameObjects ??= new List<GameObject>();
         _gameObjects.Add(gameObject);
     }
+    private void AddDisposable(IDisposable disposable)
+    {
+        _disposables ??= new List<IDisposable>();
+        _disposables.Add(disposable);
+
+    }
+
     protected void Log(string message) =>
-        Debug.Log(WrapMessage(message));
+        Log(WrapMessage(message));
 
     protected void Error(string message) =>
-        Debug.LogError(WrapMessage(message));
+        Log(WrapMessage(message));
 
     private string WrapMessage(string message) =>
         $"[{GetType().Name}] {message}";

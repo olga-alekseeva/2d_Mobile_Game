@@ -20,12 +20,6 @@ namespace Game.InputLogic
 
         private bool _usingJoystick;
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
-
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
-
         public void OnPointerDown(PointerEventData eventData)
         {
             _joystick.transform.position = eventData.position;
@@ -43,22 +37,7 @@ namespace Game.InputLogic
         public void OnDrag(PointerEventData eventData) =>
             _joystick.OnDrag(eventData);
 
-        private void StartUsing()
-        {
-            _usingJoystick = true;
-            SetActive(true);
-        }
-
-        private void FinishUsing()
-        {
-            _usingJoystick = false;
-            SetActive(false);
-        }
-
-        private void SetActive(bool active) =>
-            _container.alpha = active ? _enabledAlpha : _disabledAlpha;
-
-        private void Move()
+        protected override void Move()
         {
             if (!_usingJoystick)
                 return;
@@ -74,5 +53,22 @@ namespace Game.InputLogic
             else if (sign < 0)
                 OnLeftMove(abs);
         }
+
+        private void StartUsing()
+        {
+            _usingJoystick = true;
+            SetActive(true);
+        }
+
+        private void FinishUsing()
+        {
+            _usingJoystick = false;
+            SetActive(false);
+        }
+
+        private void SetActive(bool active) =>
+            _container.alpha = active ? _enabledAlpha : _disabledAlpha;
+
+       
     }
 }

@@ -2,7 +2,6 @@ using Tools;
 using System;
 using Profile;
 using UnityEngine;
-using System.Collections;
 using Features.Inventory;
 using Features.Shed.Upgrade;
 using System.Collections.Generic;
@@ -39,7 +38,6 @@ namespace Features.Shed
             _view.Init(Apply, Back);
         }
 
-
         private UpgradeHandlersRepository CreateRepository()
         {
             UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
@@ -65,7 +63,6 @@ namespace Features.Shed
 
             return objectView.GetComponent<ShedView>();
         }
-
 
         private void Apply()
         {
@@ -97,7 +94,7 @@ namespace Features.Shed
                     handler.Upgrade(upgradable);
         }
 
-        private void Log(string message) =>
+        private new void  Log(string message) => 
             Debug.Log($"[{GetType().Name}] {message}");
     }
 }
