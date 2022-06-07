@@ -59,12 +59,12 @@ namespace Features.Shed
 
             return inventoryController;
         }
-        private InventoryView LoadInventoryView(Transform placeForUi)
+        private InventoryView LoadInventoryView(Transform placeForUI)
         {
             var path = new ResourcePath("Prefabs/Inventory/InventoryView");
 
             GameObject prefab = ResourcesLoader.LoadPrefab(path);
-            GameObject objectView = Object.Instantiate(prefab, placeForUi);
+            GameObject objectView = Object.Instantiate(prefab, placeForUI);
             AddGameObject(objectView);
 
             return objectView.GetComponent<InventoryView>();

@@ -1,5 +1,4 @@
 using Features.AbilitySystem;
-using Features.AbilitySystem.Abilities;
 using Game.Cars.LowRiderClose;
 using Game.Cars.RacingCar;
 using Game.InputLogic;
@@ -8,7 +7,6 @@ using Game.Transport;
 using Profile;
 using Services;
 using System;
-using System.Collections.Generic;
 using Tools;
 using UnityEngine;
 
@@ -21,10 +19,11 @@ namespace Game
         private readonly SubscriptionProperty<float> _leftMoveDiff;
         private readonly SubscriptionProperty<float> _rightMoveDiff;
 
+        private readonly AbilitiesControllerFactory _abilitiesControllerFactory;
         private readonly TapeBackgroundController _tapeBackgroundController;
         private readonly InputGameController _inputGameController;
         private readonly TransportController _transportController;
-        private readonly IAbilitiesController _abilitiesController;
+        private readonly AbilitiesController _abilitiesController;
         public GameController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
@@ -34,10 +33,16 @@ namespace Game
             _tapeBackgroundController = CreateTapeBackground();
             _inputGameController = CreateInputGameController();
             _transportController = CreateTransportController();
-            _abilitiesController = CreateAbilitiesController(placeForUI);
+
+            _abilitiesControllerFactory = new AbilitiesControllerFactory(_transportController);
+            _abilitiesController = _abilitiesControllerFactory.Create(placeForUI);
 
             ServiceRoster.Analytics.SendGameStarted();
 
+        }
+        protected override void OnDispose()
+        {
+            base.OnDispose();
         }
         private TapeBackgroundController CreateTapeBackground()
         {
@@ -69,42 +74,7 @@ namespace Game
 
             return transportController;
         }
-
-        private IAbilitiesController CreateAbilitiesController(Transform placeForUI)
-        {
-            AbilityItemConfig[] abilityItemConfigs = LoadAbilityItemConfigs();
-            AbilitiesRepository repository = CreateAbilitiesRepository(abilityItemConfigs);
-            AbilitiesView view = LoadAbilitiesView(placeForUI);
-
-            var abilitiesController = new AbilitiesController(view, repository, abilityItemConfigs, 
-                _transportController);
-            AddController(abilitiesController);
-
-            return abilitiesController;
-        }
-        private AbilityItemConfig[] LoadAbilityItemConfigs()
-        {
-            var path = new ResourcePath("Configs/Ability/AbilityItemConfigDataSource");
-            return ContentDataSourceLoader.LoadAbilityItemConfigs(path);
-        }
         
-
-        private AbilitiesRepository CreateAbilitiesRepository(IEnumerable<IAbilityItem> abilityItemConfigs)
-        {
-            var repository = new AbilitiesRepository(abilityItemConfigs);
-            AddRepository(repository);
-
-            return repository;
-        }
-        private AbilitiesView LoadAbilitiesView(Transform placeForUI)
-        {
-            var path = new ResourcePath("Prefabs/Ability/AbilitiesView");
-
-            GameObject prefab = ResourcesLoader.LoadPrefab(path);
-            GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUI, false);
-            AddGameObject(objectView);
-
-            return objectView.GetComponent<AbilitiesView>();
-        }
+       
     }
 }
