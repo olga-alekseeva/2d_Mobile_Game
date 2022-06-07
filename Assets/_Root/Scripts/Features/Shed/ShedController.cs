@@ -22,6 +22,7 @@ namespace Features.Shed
         private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
         private readonly ShedView _view;
         private readonly ProfilePlayer _profilePlayer;
+        private readonly InventoryFactory _inventoryFactory;
         private readonly InventoryController _inventoryController;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
 
@@ -31,13 +32,18 @@ namespace Features.Shed
         {
             if (placeForUI == null)
                 throw new ArgumentNullException(nameof(placeForUI));
+
             _profilePlayer = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
             _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(placeForUI);
+            _inventoryFactory = new InventoryFactory(_profilePlayer.Inventory);
+            _inventoryController = _inventoryFactory.Create(placeForUI);
             _view = LoadView(placeForUI);
-
             _view.Init(Apply, Back);
+        }
+        protected override void OnDispose()
+        {
+            _inventoryFactory.Dispose();
         }
 
         private UpgradeHandlersRepository CreateRepository()
@@ -48,12 +54,20 @@ namespace Features.Shed
 
             return repository;
         }
+        private ShedView LoadView(Transform placeForUI)
+        {
+            GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
+            GameObject objectView = Object.Instantiate(prefab, placeForUI, false);
+            AddGameObject(objectView);
 
+            return objectView.GetComponent<ShedView>();
+        }
         private InventoryController CreateInventoryController(Transform placeForUI)
-{
+        {
             InventoryView inventoryView = LoadInventoryView(placeForUI);
             InventoryModel inventoryModel = _profilePlayer.Inventory;
             ItemsRepository itemsRepository = CreateItemsRepository();
+
             var inventoryController = new InventoryController(inventoryView, inventoryModel, itemsRepository);
             AddController(inventoryController);
 
@@ -79,16 +93,6 @@ namespace Features.Shed
 
             return repository;
         }
-
-        private ShedView LoadView(Transform placeForUi)
-        {
-            GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
-            GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUi, false);
-            AddGameObject(objectView);
-
-            return objectView.GetComponent<ShedView>();
-        }
-
         private void Apply()
         {
             _profilePlayer.CurrentTransport.Restore();

@@ -14,12 +14,11 @@ namespace Game
 {
     internal class GameController : BaseController
     {
-
         private readonly ProfilePlayer _profilePlayer;
         private readonly SubscriptionProperty<float> _leftMoveDiff;
         private readonly SubscriptionProperty<float> _rightMoveDiff;
 
-        private readonly AbilitiesControllerFactory _abilitiesControllerFactory;
+        private readonly AbilitiesFactory _abilitiesFactory;
         private readonly TapeBackgroundController _tapeBackgroundController;
         private readonly InputGameController _inputGameController;
         private readonly TransportController _transportController;
@@ -34,15 +33,15 @@ namespace Game
             _inputGameController = CreateInputGameController();
             _transportController = CreateTransportController();
 
-            _abilitiesControllerFactory = new AbilitiesControllerFactory(_transportController);
-            _abilitiesController = _abilitiesControllerFactory.Create(placeForUI);
+            _abilitiesFactory = new AbilitiesFactory(_transportController);
+            _abilitiesController = _abilitiesFactory.Create(placeForUI);
 
             ServiceRoster.Analytics.SendGameStarted();
 
         }
         protected override void OnDispose()
         {
-            base.OnDispose();
+            _abilitiesFactory.Dispose();
         }
         private TapeBackgroundController CreateTapeBackground()
         {
@@ -51,7 +50,6 @@ namespace Game
 
             return tapeBackgroundController;
         }
-
         private InputGameController CreateInputGameController()
         {
             var inputGameController = new InputGameController(_leftMoveDiff, _rightMoveDiff, _profilePlayer.CurrentTransport);
@@ -59,7 +57,6 @@ namespace Game
 
             return inputGameController;
         }
-
         private TransportController CreateTransportController()
         {
             TransportController transportController =
@@ -73,8 +70,7 @@ namespace Game
             AddController(transportController);
 
             return transportController;
-        }
-        
+        }       
        
     }
 }

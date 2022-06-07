@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CarConfig
   m_EditorClassIdentifier: 
   SpeedCar: 80
-  JumpHeightCar: 8
+  JumpHeightCar: 100
   InitialState: 1
   TransportType: 1

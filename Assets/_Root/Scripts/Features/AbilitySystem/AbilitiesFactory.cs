@@ -5,20 +5,20 @@ using UnityEngine;
 
 namespace Features.AbilitySystem
 {
-    internal class AbilitiesControllerFactory:BaseController
+    internal class AbilitiesFactory:BaseController
     {
         private readonly ResourcePath _DataPath = new ResourcePath("Configs/Ability/AbilityItemConfigDataSource");
         private readonly ResourcePath _ViewPath = new ResourcePath("Prefabs/Ability/AbilitiesView");
 
         private readonly IAbilityActivator _abilityActivator;
-        public AbilitiesControllerFactory(IAbilityActivator abilityActivator)=>
+        public AbilitiesFactory(IAbilityActivator abilityActivator)=>
             _abilityActivator = abilityActivator;
 
         public AbilitiesController Create(Transform placeForUI)
         {
-            AbilityItemConfig[] abilityItemConfigs = LoadAbilityItemConfigs();
-            AbilitiesRepository repository = CreateAbilitiesRepository(abilityItemConfigs);
-            AbilitiesView view = LoadAbilitiesView(placeForUI);
+            AbilityItemConfig[] abilityItemConfigs = LoadItemConfigs();
+            AbilitiesRepository repository = CreateRepository(abilityItemConfigs);
+            AbilitiesView view = LoadView(placeForUI);
 
             var abilitiesController = 
                 new AbilitiesController(view, repository, abilityItemConfigs, _abilityActivator);
@@ -26,7 +26,7 @@ namespace Features.AbilitySystem
 
             return abilitiesController;
         }
-        private AbilitiesView LoadAbilitiesView(Transform placeForUI)
+        private AbilitiesView LoadView(Transform placeForUI)
         {
             var path = new ResourcePath("Prefabs/Ability/AbilitiesView");
 
@@ -36,14 +36,14 @@ namespace Features.AbilitySystem
 
             return objectView.GetComponent<AbilitiesView>();
         }
-        private AbilityItemConfig[] LoadAbilityItemConfigs()
+        private AbilityItemConfig[] LoadItemConfigs()
         {
             var path = new ResourcePath("Configs/Ability/AbilityItemConfigDataSource");
             return ContentDataSourceLoader.LoadAbilityItemConfigs(path);
         }
 
 
-        private AbilitiesRepository CreateAbilitiesRepository(IEnumerable<IAbilityItem> abilityItemConfigs)
+        private AbilitiesRepository CreateRepository(IEnumerable<IAbilityItem> abilityItemConfigs)
         {
             var repository = new AbilitiesRepository(abilityItemConfigs);
             AddRepository(repository);
