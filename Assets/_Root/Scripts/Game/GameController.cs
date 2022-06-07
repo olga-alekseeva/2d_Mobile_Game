@@ -24,7 +24,7 @@ namespace Game
         private readonly TapeBackgroundController _tapeBackgroundController;
         private readonly InputGameController _inputGameController;
         private readonly TransportController _transportController;
-        private readonly AbilitiesController _abilitiesController;
+        private readonly IAbilitiesController _abilitiesController;
         public GameController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
@@ -70,7 +70,7 @@ namespace Game
             return transportController;
         }
 
-        private AbilitiesController CreateAbilitiesController(Transform placeForUI)
+        private IAbilitiesController CreateAbilitiesController(Transform placeForUI)
         {
             AbilityItemConfig[] abilityItemConfigs = LoadAbilityItemConfigs();
             AbilitiesRepository repository = CreateAbilitiesRepository(abilityItemConfigs);

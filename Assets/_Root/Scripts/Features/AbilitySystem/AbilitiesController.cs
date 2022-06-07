@@ -10,7 +10,7 @@ namespace Features.AbilitySystem
     internal interface IAbilitiesController
     { }
 
-    internal class AbilitiesController : BaseController
+    internal class AbilitiesController : BaseController, IAbilitiesController
     {
         private readonly IAbilitiesView _view;
         private readonly IAbilitiesRepository _repository;

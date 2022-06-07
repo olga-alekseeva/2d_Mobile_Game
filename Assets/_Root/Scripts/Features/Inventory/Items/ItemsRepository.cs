@@ -7,7 +7,7 @@ namespace Features.Inventory.Items
     {
         IReadOnlyDictionary<string, IItem> Items { get; }
     }
-    internal class ItemsRepository : Repository<string, IItem, ItemConfig>
+    internal class ItemsRepository : Repository<string, IItem, ItemConfig>, IItemsRepository 
     {
         public ItemsRepository(IEnumerable<ItemConfig> configs) : base(configs)
         {

@@ -9,7 +9,7 @@ namespace Game
         [SerializeField, Range (0f, 80f) ]
         public float SpeedCar;
 
-        [SerializeField, Range(0f, 10f)]
+        [SerializeField, Range(0f, 100f)]
         public float JumpHeightCar;
 
         public GameState InitialState = GameState.Start;

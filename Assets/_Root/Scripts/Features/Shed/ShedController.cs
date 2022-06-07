@@ -6,6 +6,8 @@ using Features.Inventory;
 using Features.Shed.Upgrade;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Features.Inventory.Items;
+using Object = UnityEngine.Object;
 
 namespace Features.Shed
 {
@@ -47,12 +49,35 @@ namespace Features.Shed
             return repository;
         }
 
-        private InventoryController CreateInventoryController(Transform placeForUi)
-        {
-            var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
+        private InventoryController CreateInventoryController(Transform placeForUI)
+{
+            InventoryView inventoryView = LoadInventoryView(placeForUI);
+            InventoryModel inventoryModel = _profilePlayer.Inventory;
+            ItemsRepository itemsRepository = CreateItemsRepository();
+            var inventoryController = new InventoryController(inventoryView, inventoryModel, itemsRepository);
             AddController(inventoryController);
 
             return inventoryController;
+        }
+        private InventoryView LoadInventoryView(Transform placeForUi)
+        {
+            var path = new ResourcePath("Prefabs/Inventory/InventoryView");
+
+            GameObject prefab = ResourcesLoader.LoadPrefab(path);
+            GameObject objectView = Object.Instantiate(prefab, placeForUi);
+            AddGameObject(objectView);
+
+            return objectView.GetComponent<InventoryView>();
+        }
+        private ItemsRepository CreateItemsRepository()
+        {
+            var path = new ResourcePath("Configs/Inventory/ItemConfigDataSource");
+
+            ItemConfig[] itemConfigs = ContentDataSourceLoader.LoadItemConfigs(path);
+            var repository = new ItemsRepository(itemConfigs);
+            AddRepository(repository);
+
+            return repository;
         }
 
         private ShedView LoadView(Transform placeForUi)

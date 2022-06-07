@@ -7,45 +7,39 @@ using Object = UnityEngine.Object;
 
 namespace Features.Inventory
 {
-    internal class InventoryController:BaseController
+    internal interface IInventoryController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Inventory/InventoryView");
-        private readonly ResourcePath _configsPath = new ResourcePath("Configs/Inventory/ItemConfigDataSource");
-
-
-        private readonly InventoryView _view;
+    }
+    internal class InventoryController:BaseController, IInventoryController
+    {
+        private readonly IInventoryView _view;
         private readonly IInventoryModel _model;
-        private readonly ItemsRepository _repository;
+        private readonly IItemsRepository _repository;
 
-        public InventoryController(Transform placeForUI, IInventoryModel inventoryModel)
+        public InventoryController(
+            [NotNull] IInventoryView inventoryView,
+            [NotNull] IInventoryModel inventoryModel,
+            [NotNull] IItemsRepository itemsRepository)
         {
-            _model = inventoryModel;
-            _repository = CreateRepository();
-            _view = LoadView(placeForUI);
+            _view
+                 = inventoryView ?? throw new ArgumentNullException(nameof(inventoryView));
+
+            _model
+                = inventoryModel ?? throw new ArgumentNullException(nameof(inventoryModel));
+
+            _repository
+                = itemsRepository ?? throw new ArgumentNullException(nameof(itemsRepository));
 
             _view.Display(_repository.Items.Values, OnItemClicked);
 
-            foreach (string itemID in _model.EquippedItems)
-                _view.Select(itemID);
+            foreach (string itemId in _model.EquippedItems)
+                _view.Select(itemId);
         }
-
-        private ItemsRepository CreateRepository()
+        protected override void OnDispose()
         {
-            ItemConfig[] itemConfigs = ContentDataSourceLoader.LoadItemConfigs(_configsPath);
-            var repository = new ItemsRepository(itemConfigs);
-            AddRepository(repository);
-
-            return repository;
+            _view.Clear();
+            base.OnDispose();
         }
-        private InventoryView LoadView(Transform placeForUi)
-        {
-            GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
-            GameObject objectView = Object.Instantiate(prefab, placeForUi);
-            AddGameObject(objectView);
-
-            return objectView.GetComponent<InventoryView>();
-        }
-
 
         private void OnItemClicked(string id)
         {
