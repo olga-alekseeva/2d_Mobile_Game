@@ -1,7 +1,10 @@
-﻿namespace Battle
+﻿using BattleScripts;
+
+namespace Battle
 {
     internal interface IEnemy
     {
-        void Update(DataPlayer dataPlayer, DataType dataType);
+        void Update(DataPlayer dataPlayer);
     }
+
 }

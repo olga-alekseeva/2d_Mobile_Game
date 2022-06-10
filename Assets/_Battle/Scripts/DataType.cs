@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace Battle
 {
-
-
     internal enum DataType 
     {
         Money,
