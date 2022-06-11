@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BattleScripts
 {
-    internal class DataPlayer
+    internal class PlayerData
     {
         private readonly List<IEnemy> _enemies;
         private int _value;
@@ -17,7 +17,7 @@ namespace BattleScripts
         }
 
 
-        public DataPlayer(DataType dataType)
+        public PlayerData(DataType dataType)
         {
             DataType = dataType;
             _enemies = new List<IEnemy>();

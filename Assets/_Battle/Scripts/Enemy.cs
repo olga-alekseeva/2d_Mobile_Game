@@ -7,7 +7,7 @@ namespace Battle
     {
         private const float kMoney = 5f;
         private const float kPower = 1.5f;
-        private const int MaxPlayerHealth = 20;
+        private const float MaxPlayerHealth = 20f;
 
         private string _name;
 
@@ -18,7 +18,7 @@ namespace Battle
         public Enemy(string name) =>
             _name = name;
         
-        public void Update(DataPlayer dataPlayer)
+        public void Update(PlayerData dataPlayer)
         {
             switch (dataPlayer.DataType)
             {
@@ -29,7 +29,7 @@ namespace Battle
                 case DataType.Health: 
                     _playerHealth = dataPlayer.Value;
                     break;
-                case DataType.Power:
+                case DataType.Power: 
                     _playerPower = dataPlayer.Value;
                     break;                    
             }

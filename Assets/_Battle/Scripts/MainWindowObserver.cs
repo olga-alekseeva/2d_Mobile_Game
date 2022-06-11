@@ -12,6 +12,7 @@ namespace Battle
         [SerializeField] private TMP_Text _countMoneyText;
         [SerializeField] private TMP_Text _countHealthText;
         [SerializeField] private TMP_Text _countPowerText;
+        [SerializeField] private TMP_Text _countCrimeText;
 
         [Header("Enemy Stats")]
         [SerializeField] private TMP_Text _countPowerEnemyText;
@@ -28,16 +29,23 @@ namespace Battle
         [SerializeField] private Button _addPowerButton;
         [SerializeField] private Button _minusPowerButton;
 
+        [Header ("Criminality Buttons")]
+        [SerializeField] private Button _addCrimeButton;
+        [SerializeField] private Button _minusCrimeButton;
+
         [Header("Other Buttons")]
         [SerializeField] private Button _fightButton;
+        [SerializeField] private Button _walkAwayButton;
 
         private int _allCountMoneyPlayer;
         private int _allCountHealthPlayer;
         private int _allCountPowerPlayer;
+        private int _allCountCrimePlayer;
 
-        private DataPlayer _money;
-        private DataPlayer _heath;
-        private DataPlayer _power;
+        private PlayerData _money;
+        private PlayerData _heath;
+        private PlayerData _power;
+        private PlayerData _crime;
 
         private Enemy _enemy;
 
@@ -48,32 +56,34 @@ namespace Battle
             _money = CreateDataPlayer(DataType.Money);
             _heath = CreateDataPlayer(DataType.Health);
             _power = CreateDataPlayer(DataType.Power);
+            _crime = CreateDataPlayer(DataType.Crime);
 
             Subscribe();
         }
 
         private void OnDestroy()
         {
-            DisposeDataPlayer(ref _money);
-            DisposeDataPlayer(ref _heath);
-            DisposeDataPlayer(ref _power);
+            DisposePlayerData(ref _money);
+            DisposePlayerData(ref _heath);
+            DisposePlayerData(ref _power);
+            DisposePlayerData(ref _crime);
 
             Unsubscribe();
         }
 
 
-        private DataPlayer CreateDataPlayer(DataType dataType)
+        private PlayerData CreateDataPlayer(DataType dataType)
         {
-            DataPlayer dataPlayer = new DataPlayer(dataType);
+            PlayerData dataPlayer = new PlayerData(dataType);
             dataPlayer.Attach(_enemy);
 
             return dataPlayer;
         }
 
-        private void DisposeDataPlayer(ref DataPlayer dataPlayer)
+        private void DisposePlayerData(ref PlayerData playerData)
         {
-            dataPlayer.Detach(_enemy);
-            dataPlayer = null;
+            playerData.Detach(_enemy);
+            playerData = null;
         }
 
 
@@ -88,7 +98,12 @@ namespace Battle
             _addPowerButton.onClick.AddListener(IncreasePower);
             _minusPowerButton.onClick.AddListener(DecreasePower);
 
+            _addCrimeButton.onClick.AddListener(IncreaseCrime);
+            _minusCrimeButton.onClick.AddListener(DecreaseCrime);
+
             _fightButton.onClick.AddListener(Fight);
+            _walkAwayButton.onClick.AddListener(WalkAway);
+            
         }
 
         private void Unsubscribe()
@@ -115,6 +130,9 @@ namespace Battle
         private void IncreasePower() => IncreaseValue(ref _allCountPowerPlayer, DataType.Power);
         private void DecreasePower() => DecreaseValue(ref _allCountPowerPlayer, DataType.Power);
 
+        private void IncreaseCrime() => IncreaseValue(ref _allCountCrimePlayer, DataType.Crime);
+        private void DecreaseCrime() => DecreaseValue(ref _allCountCrimePlayer, DataType.Crime);
+
         private void IncreaseValue(ref int value, DataType dataType) => AddToValue(ref value, 1, dataType);
         private void DecreaseValue(ref int value, DataType dataType) => AddToValue(ref value, -1, dataType);
 
@@ -127,7 +145,7 @@ namespace Battle
 
         private void ChangeDataWindow(int countChangeData, DataType dataType)
         {
-            DataPlayer dataPlayer = GetDataPlayer(dataType);
+            PlayerData dataPlayer = GetDataPlayer(dataType);
             TMP_Text textComponent = GetTextComponent(dataType);
             string text = $"Player {dataType:F} {countChangeData}";
 
@@ -144,19 +162,24 @@ namespace Battle
                 DataType.Money => _countMoneyText,
                 DataType.Health => _countHealthText,
                 DataType.Power => _countPowerText,
+                DataType.Crime => _countCrimeText,
                 _ => throw new ArgumentException($"Wrong {nameof(DataType)}")
             };
 
-        private DataPlayer GetDataPlayer(DataType dataType) =>
+        private PlayerData GetDataPlayer(DataType dataType) =>
             dataType switch
             {
                 DataType.Money => _money,
                 DataType.Health => _heath,
                 DataType.Power => _power,
+                DataType.Crime => _crime,
                 _ => throw new ArgumentException($"Wrong {nameof(DataType)}")
             };
 
-
+        private void CrimeBehaviour()
+        {
+            
+        }
         private void Fight()
         {
             int enemyPower = _enemy.CalcPower();
@@ -166,6 +189,12 @@ namespace Battle
             string message = isVictory ? "Win" : "Lose";
 
             Debug.Log($"<color={color}>{message}!!!</color>");
+        }
+        private void WalkAway()
+        {
+            string color = "#07FF00";
+            string message = ("Peace, Bro");
+           Debug.Log($"<color={color}>{message}!!!</color>");
         }
     }
 }

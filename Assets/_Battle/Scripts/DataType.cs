@@ -9,6 +9,7 @@ namespace Battle
     {
         Money,
         Health,
-        Power
+        Power,
+        Crime
     }
 }
