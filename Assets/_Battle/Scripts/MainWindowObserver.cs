@@ -180,6 +180,7 @@ namespace Battle
         private void CrimeButtonVisibility()
         {
             int maxCrimeLevel = 2;
+            int maxLevelVisibilityButton = 5;
             if(_allCountCrimePlayer <= maxCrimeLevel)
             {
                 _walkAwayButton.interactable = true;
@@ -187,6 +188,11 @@ namespace Battle
             if (_allCountCrimePlayer > maxCrimeLevel)
             {
                 _walkAwayButton.interactable = false;
+            }
+            if (_allCountCrimePlayer >= maxLevelVisibilityButton)
+            {
+                Destroy(_walkAwayButton.gameObject);
+                _addCrimeButton.interactable = false;
             }
         }
         private void Fight()
