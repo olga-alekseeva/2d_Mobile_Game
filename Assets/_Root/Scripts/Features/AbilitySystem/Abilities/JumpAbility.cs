@@ -81,11 +81,6 @@ namespace Features.AbilitySystem.Abilities
         private void IncreaseTime() => _time += Time.deltaTime;
         private void DecreaseTime() => _time -= Time.deltaTime;
 
-        private void UpdateState()
-        {
-            float currentHeight = CalcCurrentHeight();
-            _transformCache.position = CalcCurrentPosition(currentHeight);
-        }
 
         private float CalcCurrentHeight()
         {
@@ -99,20 +94,25 @@ namespace Features.AbilitySystem.Abilities
             position.y = height;
             return position;
         }
-
-
-        private void UpdatePosition()
+        private void UpdateState()
         {
             if (IsJumpPeak())
                 _jumpState = JumpState.Reverse;
 
-            if(IsJumpFinished())
+            if (IsJumpFinished())
                 FinishAbility();
+        }
+
+
+        private void UpdatePosition()
+        {
+            float currentHeight = CalcCurrentHeight();
+            _transformCache.position = CalcCurrentPosition(currentHeight);
 
         }
         private bool IsJumpPeak() =>
             _jumpState == JumpState.Direct &&
-            _time < _jumpDuration;
+            _time >= _jumpDuration;
         private bool IsJumpFinished() =>
             _jumpState == JumpState.Reverse &&
             _time <= StartTime;

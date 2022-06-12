@@ -139,6 +139,7 @@ namespace Battle
         private void AddToValue(ref int value, int addition, DataType dataType)
         {
             value += addition;
+            CrimeButtonVisibility();
             ChangeDataWindow(value, dataType);
         }
 
@@ -176,9 +177,17 @@ namespace Battle
                 _ => throw new ArgumentException($"Wrong {nameof(DataType)}")
             };
 
-        private void CrimeBehaviour()
+        private void CrimeButtonVisibility()
         {
-            
+            int maxCrimeLevel = 2;
+            if(_allCountCrimePlayer <= maxCrimeLevel)
+            {
+                _walkAwayButton.interactable = true;
+            }
+            if (_allCountCrimePlayer > maxCrimeLevel)
+            {
+                _walkAwayButton.interactable = false;
+            }
         }
         private void Fight()
         {
