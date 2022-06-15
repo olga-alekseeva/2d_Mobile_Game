@@ -5,7 +5,7 @@ using UnityEngine;
 internal class EntryPoint : MonoBehaviour
 {
     
-    [SerializeField] private CarConfig _carConfig;
+    [SerializeField] private StartConfig _carConfig;
     [SerializeField] private Transform _placeForUI;
     private MainController _mainController;
     

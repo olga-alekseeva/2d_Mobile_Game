@@ -18,7 +18,7 @@ namespace Game
         private readonly SubscriptionProperty<float> _leftMoveDiff;
         private readonly SubscriptionProperty<float> _rightMoveDiff;
 
-        private readonly AbilitiesFactory _abilitiesFactory;
+        private readonly AbilitiesControllerFactory _abilitiesFactory;
         private readonly TapeBackgroundController _tapeBackgroundController;
         private readonly InputGameController _inputGameController;
         private readonly TransportController _transportController;
@@ -33,7 +33,7 @@ namespace Game
             _inputGameController = CreateInputGameController();
             _transportController = CreateTransportController();
 
-            _abilitiesFactory = new AbilitiesFactory(_transportController);
+            _abilitiesFactory = new AbilitiesControllerFactory(_transportController);
             _abilitiesController = _abilitiesFactory.Create(placeForUI);
 
             ServiceRoster.Analytics.SendGameStarted();

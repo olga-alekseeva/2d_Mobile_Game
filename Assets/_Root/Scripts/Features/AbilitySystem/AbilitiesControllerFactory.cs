@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Features.AbilitySystem
 {
-    internal class AbilitiesFactory:BaseController
+    internal class AbilitiesControllerFactory:BaseController
     {
         private readonly ResourcePath _DataPath = new ResourcePath("Configs/Ability/AbilityItemConfigDataSource");
         private readonly ResourcePath _ViewPath = new ResourcePath("Prefabs/Ability/AbilitiesView");
 
         private readonly IAbilityActivator _abilityActivator;
-        public AbilitiesFactory(IAbilityActivator abilityActivator)=>
+        public AbilitiesControllerFactory(IAbilityActivator abilityActivator)=>
             _abilityActivator = abilityActivator;
 
         public AbilitiesController Create(Transform placeForUI)
