@@ -572,6 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932bcf1499f61d947a86304a47ddca24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrencySlotInActiveKey: DailyRewardActiveKey
+  TimeGetRewardKey: TimeGetDailyRewardKey
   <TimeCooldown>k__BackingField: 86400
   <TimeDeadline>k__BackingField: 172800
   <Rewards>k__BackingField:
@@ -601,7 +603,7 @@ MonoBehaviour:
     <CountCurrency>k__BackingField: 100
   <TimerNewReward>k__BackingField: {fileID: 1087168198}
   <MountRootSlotsReward>k__BackingField: {fileID: 1600060270}
-  <ContainerSlotRewardPrefab>k__BackingField: {fileID: 8421237365051996869, guid: 83449e86f0aee394d9d832eca9cfa68e, type: 3}
+  <ContainerSlotRewardPrefab>k__BackingField: {fileID: 3979952661494345766, guid: 095a204fc8135a94eb555a7b70b36ba1, type: 3}
   <GetRewardButton>k__BackingField: {fileID: 456856893}
   <ResetButton>k__BackingField: {fileID: 588186750}
 --- !u!1 &855265903
@@ -650,7 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c25a5151e720440a64ea2191250549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dailyRewardView: {fileID: 618906614}
+  _rewardView: {fileID: 618906614}
 --- !u!1 &961062112
 GameObject:
   m_ObjectHideFlags: 0

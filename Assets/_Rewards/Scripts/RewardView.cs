@@ -11,8 +11,9 @@ namespace Rewards
 {
     internal class RewardView: MonoBehaviour
     {
-        private const string CurrencySlotInActiveKey = nameof(CurrencySlotInActiveKey);
-        private const string TimeGetRewardKey = nameof(TimeGetRewardKey);
+        [Header ("Settings PlayerPrefs Keys")]
+        [SerializeField] private string CurrencySlotInActiveKey = nameof(CurrencySlotInActiveKey);
+        [SerializeField] private string TimeGetRewardKey = nameof(TimeGetRewardKey);
 
         [field: Header ("Settings Time Get Reward")]
         [field: SerializeField] public float TimeCooldown { get; private set; } = 604800;

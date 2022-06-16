@@ -624,6 +624,14 @@ PrefabInstance:
       value: RewardsWindow
       objectReference: {fileID: 0}
     - target: {fileID: 7914529284924393020, guid: 363dbeeaba19d1941b917ba1af028926, type: 3}
+      propertyPath: TimeGetRewardKey
+      value: TimeGetWeeklyRewardKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914529284924393020, guid: 363dbeeaba19d1941b917ba1af028926, type: 3}
+      propertyPath: CurrencySlotInActiveKey
+      value: WeeklyRewardActiveKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914529284924393020, guid: 363dbeeaba19d1941b917ba1af028926, type: 3}
       propertyPath: <TimeCooldown>k__BackingField
       value: 604800
       objectReference: {fileID: 0}
