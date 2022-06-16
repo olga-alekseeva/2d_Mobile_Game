@@ -60,10 +60,10 @@ internal abstract class BaseController : IDisposable
     }
 
     protected void Log(string message) =>
-        Log(WrapMessage(message));
+        Debug.Log(WrapMessage(message));
 
     protected void Error(string message) =>
-        Log(WrapMessage(message));
+        Debug.Log(WrapMessage(message));
 
     private string WrapMessage(string message) =>
         $"[{GetType().Name}] {message}";
