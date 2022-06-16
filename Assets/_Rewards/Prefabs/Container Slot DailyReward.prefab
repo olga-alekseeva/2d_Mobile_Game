@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7137442281774589544}
   - component: {fileID: 3979952661494345766}
   m_Layer: 5
-  m_Name: Container Slot Reward
+  m_Name: Container Slot DailyReward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,9 @@ MonoBehaviour:
   _originalBackground: {fileID: 7137442283713818415}
   _selectBackground: {fileID: 7137442282852083451}
   _IconCurrency: {fileID: 7137442283784502525}
-  _textDays: {fileID: 7137442283275244573}
+  _textCooldownPeriod: {fileID: 7137442283275244573}
   _countReward: {fileID: 7137442283276974771}
+  _cooldownPeriodKey: Day
 --- !u!1 &7137442282101817618
 GameObject:
   m_ObjectHideFlags: 0

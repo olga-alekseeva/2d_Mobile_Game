@@ -7,16 +7,19 @@ namespace Rewards
 {
     internal class ContainerSlotRewardView : MonoBehaviour
     {
+        [Header("Components")]
         [SerializeField] private Image _originalBackground;
         [SerializeField] private Image _selectBackground;
         [SerializeField] private Image _IconCurrency;
-        [SerializeField] private TMP_Text _textDays;
+        [SerializeField] private TMP_Text _textCooldownPeriod;
         [SerializeField] private TMP_Text _countReward;
 
-        public void SetData(Reward reward, int countDay, bool isSelected)
+        [Header("Settings")]
+        [SerializeField] private string _cooldownPeriodKey;
+        public void SetData(Reward reward, int countCooldownPeriods, bool isSelected)
         {
             _IconCurrency.sprite = reward.IconCurrency;
-            _textDays.text = $"Day{countDay}";
+            _textCooldownPeriod.text = $"{_cooldownPeriodKey}{countCooldownPeriods}";
             _countReward.text = reward.CountCurrency.ToString();
 
             UpdateBackground(isSelected);
