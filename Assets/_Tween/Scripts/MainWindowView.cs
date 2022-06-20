@@ -7,7 +7,7 @@ namespace Tween
     internal class MainWindowView : MonoBehaviour
     {
         [Header("Popup")]
-        [SerializeField] private Button _buttonOpenPopup;
+        [SerializeField] private Button _openPopupButton;
         [SerializeField] private PopupView _popupView;
 
         [Header("Change Text")]
@@ -20,13 +20,13 @@ namespace Tween
 
         private void Start()
         {
-            _buttonOpenPopup.onClick.AddListener(_popupView.ShowPopup);
+            _openPopupButton.onClick.AddListener(_popupView.ShowPopup);
             _buttonChangeText.onClick.AddListener(ChangeText);
         }
 
         private void OnDestroy()
         {
-            _buttonOpenPopup.onClick.RemoveAllListeners();
+            _openPopupButton.onClick.RemoveAllListeners();
             _buttonChangeText.onClick.RemoveAllListeners();
         }
 
