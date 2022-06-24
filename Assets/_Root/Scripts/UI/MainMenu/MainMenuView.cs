@@ -11,8 +11,10 @@ namespace UI
 
         [Header("Buttons")]
         [SerializeField] private Button _buttonStart;
-        [SerializeField] private Button _buttonSettings;
+        [SerializeField] private Button _dailyReward;
         [SerializeField] private Button _buttonShed;
+        [SerializeField] private Button _buttonSettings;
+        [SerializeField] private Button _buttonQuit;
         [SerializeField] private Button _buttonAdsReward;
         [SerializeField] private Button _buttonBuyProduct;
         

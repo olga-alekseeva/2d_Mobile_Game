@@ -5,11 +5,13 @@ using UnityEngine.UI;
 namespace Tween
 {
     [RequireComponent(typeof(Button))]
+    [RequireComponent(typeof(AudioSource))]
     [RequireComponent(typeof(RectTransform))]
     public class CustomButtonByComposition : Button
     {
         [Header("Components")]
         [SerializeField] private Button _button;
+        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private RectTransform _rectTransform;
 
         [Header("Settings")]
@@ -30,12 +32,17 @@ namespace Tween
         private void InitComponents()
         {
             _button ??= GetComponent<Button>();
+            _audioSource??= GetComponent<AudioSource>();
             _rectTransform ??= GetComponent<RectTransform>();
         }
-        private void OnButtonClick() =>
+        private void OnButtonClick()
+        {
             ActivateAnimation();
+            PlaySound();
 
-    [ContextMenu(nameof(ActivateAnimation))]
+        }
+
+        [ContextMenu(nameof(ActivateAnimation))]
         private void ActivateAnimation()
         {
             StopAnimation();
@@ -56,5 +63,6 @@ namespace Tween
 
         private void StopAnimation() =>
             _tweenAnimation?.Kill();
+        private void PlaySound() => _audioSource.Play();
     }
 }
