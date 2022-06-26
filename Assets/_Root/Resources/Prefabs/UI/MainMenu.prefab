@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224123550787048883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8565172f53fd0d047b96f87f477187bb, type: 3}
   m_Name: 
@@ -220,7 +220,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _button: {fileID: 5666214133613560939}
-  _audioSource: {fileID: 6596774122540375503}
   _rectTransform: {fileID: 2339386588365672158}
   _animationButtonType: 2
   _curveEase: 1
@@ -644,7 +643,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _button: {fileID: 2513622368968119440}
-  _audioSource: {fileID: 1754796126999131503}
   _rectTransform: {fileID: 6150064060884992319}
   _animationButtonType: 2
   _curveEase: 1
@@ -871,7 +869,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _button: {fileID: 5339716930979329371}
-  _audioSource: {fileID: 6041148620534916406}
   _rectTransform: {fileID: 584338793015140572}
   _animationButtonType: 2
   _curveEase: 1
@@ -1174,7 +1171,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _button: {fileID: 7566934999447589192}
-  _audioSource: {fileID: 105643494713252686}
   _rectTransform: {fileID: 3130634385701380256}
   _animationButtonType: 2
   _curveEase: 1
@@ -1748,13 +1744,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _productId: brake
-  _buttonStart: {fileID: 875761591245566672}
-  _dailyReward: {fileID: 7566934999447589192}
-  _buttonShed: {fileID: 5339716930979329371}
-  _buttonSettings: {fileID: 2513622368968119440}
-  _buttonQuit: {fileID: 5666214133613560939}
-  _buttonAdsReward: {fileID: 8908222048833192137}
-  _buttonBuyProduct: {fileID: 2057841510091269793}
+  _buttonStart: {fileID: 0}
+  _dailyReward: {fileID: 0}
+  _buttonShed: {fileID: 0}
+  _buttonSettings: {fileID: 0}
+  _buttonQuit: {fileID: 0}
+  _buttonAdsReward: {fileID: 0}
+  _buttonBuyProduct: {fileID: 0}
 --- !u!1 &6672313838146005135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,8 +2387,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _button: {fileID: 875761591245566672}
-  _audioSource: {fileID: 7328416581848741444}
-  _rectTransform: {fileID: 5133776597080030000}
+  _rectTransform: {fileID: 0}
   _animationButtonType: 2
   _curveEase: 1
   _duration: 0.6
