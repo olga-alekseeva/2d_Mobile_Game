@@ -29,12 +29,12 @@ internal class MainController : BaseController
     {
         DisposeAllControllers();
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
-        
+
     }
 
     private void OnChangeGameState(GameState state)
     {
-                DisposeAllControllers();
+        DisposeAllControllers();
         switch (state)
         {
             case GameState.Start:
@@ -46,8 +46,8 @@ internal class MainController : BaseController
                 break;
 
             case GameState.Game:
-                _gameController = new GameController(_placeForUI,_profilePlayer);
-                _backButtonController = new BackButtonController(_placeForUI,_profilePlayer);               
+                _gameController = new GameController(_placeForUI, _profilePlayer);
+                _backButtonController = new BackButtonController(_placeForUI, _profilePlayer);
                 break;
             case GameState.Shed:
                 _shedController = new ShedController(_placeForUI, _profilePlayer);
