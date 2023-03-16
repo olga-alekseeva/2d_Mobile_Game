@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-English (en)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-English (en)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 767afe8d9aac26c4ba7a3277a2a6ee4f
+  m_SerializeEntries:
+  - m_GUID: 3316aabd5dd7e2743ad1214e35350560
+    m_Address: ui-large-buttons-horizontal_2
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-fr
+    - Locale-ru-RU
+  - m_GUID: f59401c5c79564fd1ae3bfb0876455a7
+    m_Address: UI_Graphic_Resource_Gems
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: d17a906e3ad1a6343bfab4cbe46c1109, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b53034a770d985449af238040fe3c9db, type: 2}
+    - {fileID: 11400000, guid: 030d4ad9d44761243989cac8c51a67de, type: 2}

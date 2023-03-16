@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Tween
 {
+    [RequireComponent(typeof(AudioSource))]
     [RequireComponent(typeof(RectTransform))]
     public class CustomButtonByInheritance : Button
     {
@@ -14,7 +15,9 @@ namespace Tween
 
         public static string IndependentUpdateName => nameof(_isIndependentUpdate);
 
+        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private RectTransform _rectTransform;
+
 
         [SerializeField] private AnimationButtonType _animationButtonType = AnimationButtonType.ChangePosition;
         [SerializeField] private Ease _curveEase = Ease.Linear;
@@ -26,23 +29,31 @@ namespace Tween
         protected override void Awake()
         {
             base.Awake();
-            InitRectTransform();
+            InitComponents();
         }
 
         protected override void OnValidate()
         {
             base.OnValidate();
-            InitRectTransform();
+            InitComponents();
         }
 
-        private void InitRectTransform() =>
+        private void InitComponents()
+        {
+            _audioSource ??= GetComponent<AudioSource>();
             _rectTransform ??= GetComponent<RectTransform>();
+        }
 
 
         public override void OnPointerClick(PointerEventData eventData)
         {
             base.OnPointerClick(eventData);
             ActivateAnimation();
+            PlaySound();
+        }
+        private void PlaySound()
+        {
+            _audioSource.Play();
         }
         [ContextMenu(nameof(ActivateAnimation))]
         private void ActivateAnimation()
