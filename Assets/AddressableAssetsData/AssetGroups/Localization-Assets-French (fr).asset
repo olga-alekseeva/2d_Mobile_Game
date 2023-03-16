@@ -10,28 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-String-Tables-English (en)
+  m_Name: Localization-Assets-French (fr)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-String-Tables-English (en)
+  m_GroupName: Localization-Assets-French (fr)
   m_Data:
     m_SerializedData: []
-  m_GUID: 9e7349d942ba4114d8906e4aa0df081a
+  m_GUID: eed0b8dfa674ff645bd15b5cf381c265
   m_SerializeEntries:
-  - m_GUID: d386bd1cb4fb6664982ae2f64531774f
-    m_Address: Main_en
+  - m_GUID: a9c136f9dcfd3954fa0f3fab6260607f
+    m_Address: BirdHero_1
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale-en
-    - Preload
-  - m_GUID: fda98decef8538f4cb09dce88afa4b0f
-    m_Address: MainMenuText_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
+    - Locale-fr
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d17a906e3ad1a6343bfab4cbe46c1109, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 1e7535d0c8a414342bc58430c0a897e1, type: 2}
-    - {fileID: 11400000, guid: b5f92b1ea7d8e9644aeeaed50e854470, type: 2}
+    - {fileID: 11400000, guid: d896ab90f3b67ec419bad447345b8617, type: 2}
+    - {fileID: 11400000, guid: 3bcb0cc0e9bd70c4687d7540e7c8be87, type: 2}

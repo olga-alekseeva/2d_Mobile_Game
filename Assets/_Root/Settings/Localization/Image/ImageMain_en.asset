@@ -9,18 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Main_ru-RU
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: ImageMain_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: ru-RU
-  m_SharedData: {fileID: 11400000, guid: 2817d7229182e604bbe2e29316582e40, type: 2}
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c3244901b78bd6c4f92b58bfbdbd9260, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 774809337856
-    m_Localized: "\u043F\u0435\u0440\u0435\u0432\u0435\u0441\u0442\u0438 \u044D\u0442\u043E\u0442
-      \u0442\u0435\u043A\u0441\u0442"
+  - m_Id: 98163245056
+    m_Localized: 3316aabd5dd7e2743ad1214e35350560
+    m_Metadata:
+      m_Items: []
+  - m_Id: 806224674816
+    m_Localized: f59401c5c79564fd1ae3bfb0876455a7
     m_Metadata:
       m_Items: []
   references:

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: ImageMain Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: ImageMain
+  m_TableCollectionNameGuidString: c3244901b78bd6c4f92b58bfbdbd9260
+  m_Entries:
+  - m_Id: 98163245056
+    m_Key: start_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 806224674816
+    m_Key: daily_reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895169085440
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 5900685653133492276
+  m_KeyGenerator:
+    rid: 5900685653133492275
+  references:
+    version: 2
+    RefIds:
+    - rid: 5900685653133492275
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1678965699800
+    - rid: 5900685653133492276
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 98163245056
+          m_TableCodes:
+          - en
+          - fr
+          - ru-RU
+        - m_KeyId: 806224674816
+          m_TableCodes:
+          - en
+          - fr
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

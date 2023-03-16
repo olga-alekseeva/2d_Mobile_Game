@@ -10,16 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Main_fr
+  m_Name: MainMenuText_fr
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: fr
-  m_SharedData: {fileID: 11400000, guid: 2817d7229182e604bbe2e29316582e40, type: 2}
+  m_SharedData: {fileID: 11400000, guid: cefa9e8144421134eb3889026dce7d2f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 774809337856
-    m_Localized: 
+  - m_Id: 7398506496
+    m_Localized: "d\xE9marrer le jeu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 265285287936
+    m_Localized: "r\xE9compense quotidienne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 549227085824
+    m_Localized: Hangar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 682601758720
+    m_Localized: "r\xE9glages"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 925993025536
+    m_Localized: sortie
     m_Metadata:
       m_Items: []
   references:
